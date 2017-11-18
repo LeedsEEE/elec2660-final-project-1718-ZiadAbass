@@ -87,7 +87,7 @@
         <!--Item-->
         <scene sceneID="JlR-Zu-Grr">
             <objects>
-                <viewController id="gOw-On-czN" sceneMemberID="viewController">
+                <viewController id="gOw-On-czN" customClass="ViewReminderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kyf-Mh-KcL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
