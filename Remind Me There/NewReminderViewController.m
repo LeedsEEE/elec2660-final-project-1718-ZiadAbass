@@ -6,13 +6,13 @@
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "NewReminderViewController.h"
 
-@interface SecondViewController ()
+@interface NewReminderViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation NewReminderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -6,13 +6,13 @@
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ExistingRemindersViewController.h"
 
-@interface FirstViewController ()
+@interface ExistingRemindersViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation ExistingRemindersViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
