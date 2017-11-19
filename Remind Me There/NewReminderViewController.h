@@ -11,5 +11,19 @@
 @interface NewReminderViewController : UIViewController
 
 
+- (IBAction)reminderTypeSegmented:(UISegmentedControl *)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *reminderText;
+
+- (IBAction)takePhotoButton:(id)sender;
+- (IBAction)chooseExistingPhoto:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIImageView *previewImage;
+
+- (IBAction)chooseLocationButton:(id)sender;
+
+- (IBAction)saveReminderButton:(id)sender;
+
+
 @end
 

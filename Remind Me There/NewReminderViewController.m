@@ -30,4 +30,18 @@
 }
 
 
+
+- (IBAction)reminderTypeSegmented:(UISegmentedControl *)sender {
+}
+- (IBAction)takePhotoButton:(id)sender {
+}
+
+- (IBAction)chooseExistingPhoto:(id)sender {
+}
+
+- (IBAction)chooseLocationButton:(id)sender {
+}
+
+- (IBAction)saveReminderButton:(id)sender {
+}
 @end

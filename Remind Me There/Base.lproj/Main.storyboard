@@ -30,11 +30,11 @@
             </objects>
             <point key="canvasLocation" x="-806" y="802"/>
         </scene>
-        <!--Item-->
+        <!--New Reminder-->
         <scene sceneID="WxW-EH-nLn">
             <objects>
                 <navigationController id="Ga1-SO-JeM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cuE-2M-pC8"/>
+                    <tabBarItem key="tabBarItem" title="New Reminder" id="cuE-2M-pC8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZbL-CM-hH0">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,6 +67,9 @@
                                     <segment title="Text"/>
                                     <segment title="Photo"/>
                                 </segments>
+                                <connections>
+                                    <action selector="reminderTypeSegmented:" destination="8rJ-Kc-sve" eventType="valueChanged" id="6dw-79-AdA"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type reminder text here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-40-4O7">
                                 <rect key="frame" x="50" y="205" width="275" height="60"/>
@@ -77,25 +80,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E0-L2-edD">
-                                <rect key="frame" x="36" y="295" width="130" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E0-L2-edD">
+                                <rect key="frame" x="40" y="295" width="90" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhotoButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gFe-32-aCn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSL-af-o7i">
                                 <rect key="frame" x="205" y="295" width="130" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Choose Existing"/>
+                                <connections>
+                                    <action selector="chooseExistingPhoto:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uy8-0Q-2fH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-6z-xTn">
                                 <rect key="frame" x="119.5" y="359" width="136" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Choose Location"/>
+                                <connections>
+                                    <action selector="chooseLocationButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bS5-D4-Hyt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw8-NB-mJs">
                                 <rect key="frame" x="302" y="549" width="48" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveReminderButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="0yJ-sO-7Qh"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
                                 <rect key="frame" x="15" y="416" width="210" height="187"/>
@@ -130,10 +145,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="New Reminder" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="wuE-UU-StJ"/>
+                    <connections>
+                        <outlet property="previewImage" destination="uJX-t5-v1d" id="GtT-7T-bp5"/>
+                        <outlet property="reminderText" destination="hGb-40-4O7" id="zQy-iR-B2E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.3999999999999999" y="1566.5667166416792"/>
+            <point key="canvasLocation" x="-1" y="1669"/>
         </scene>
         <!--View Reminder-->
         <scene sceneID="JlR-Zu-Grr">
@@ -162,8 +181,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="gOw-On-czN" kind="relationship" relationship="viewControllers" id="BCP-pk-aTI"/>
                         <segue destination="Ga1-SO-JeM" kind="relationship" relationship="viewControllers" id="gnW-1c-LoX"/>
+                        <segue destination="gOw-On-czN" kind="relationship" relationship="viewControllers" id="BCP-pk-aTI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
