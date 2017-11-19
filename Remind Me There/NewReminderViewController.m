@@ -32,6 +32,19 @@
 
 
 - (IBAction)reminderTypeSegmented:(UISegmentedControl *)sender {
+    
+    if (sender.selectedSegmentIndex == 0 ){
+        self.reminderText.hidden = NO;
+        self.takePhotoButtonOutlet.hidden = YES;
+        self.chooseExistingButtonOutlet.hidden = YES;
+    }
+    
+    if (sender.selectedSegmentIndex == 1 ){
+        self.reminderText.hidden = YES;
+        self.takePhotoButtonOutlet.hidden = NO;
+        self.chooseExistingButtonOutlet.hidden = NO;
+    }
+    
 }
 - (IBAction)takePhotoButton:(id)sender {
 }

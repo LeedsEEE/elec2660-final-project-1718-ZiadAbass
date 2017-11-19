@@ -16,7 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *reminderText;
 
 - (IBAction)takePhotoButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *takePhotoButtonOutlet;
+
 - (IBAction)chooseExistingPhoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *chooseExistingButtonOutlet;
 
 @property (weak, nonatomic) IBOutlet UIImageView *previewImage;
 

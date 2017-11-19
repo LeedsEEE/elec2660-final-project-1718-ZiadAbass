@@ -146,8 +146,10 @@
                     <tabBarItem key="tabBarItem" title="New Reminder" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="wuE-UU-StJ"/>
                     <connections>
+                        <outlet property="chooseExistingButtonOutlet" destination="QSL-af-o7i" id="9ra-sx-Xw9"/>
                         <outlet property="previewImage" destination="uJX-t5-v1d" id="GtT-7T-bp5"/>
                         <outlet property="reminderText" destination="hGb-40-4O7" id="zQy-iR-B2E"/>
+                        <outlet property="takePhotoButtonOutlet" destination="8E0-L2-edD" id="TyE-AH-OmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
