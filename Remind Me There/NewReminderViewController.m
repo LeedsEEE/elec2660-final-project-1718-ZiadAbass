@@ -20,6 +20,13 @@
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
     
+    //Setting picker objects and setting NewReminderViewController as the delegate for both pickers:
+    self.pickerForTakePhoto = [[UIImagePickerController alloc] init];
+    self.pickerForChooseExisting = [[UIImagePickerController alloc] init];
+    
+    self.pickerForTakePhoto.delegate = self;
+    self.pickerForChooseExisting.delegate = self;
+    
 }
 
 
