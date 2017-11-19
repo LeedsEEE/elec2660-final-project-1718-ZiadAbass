@@ -54,11 +54,46 @@
     }
     
 }
+
+
 - (IBAction)takePhotoButton:(id)sender {
+    
+    //Camera will open upon pressing this button
+    
+    [self.pickerForTakePhoto setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:self.pickerForTakePhoto animated:YES completion:NULL];
+    
 }
 
+
 - (IBAction)chooseExistingPhoto:(id)sender {
+    
+    //User's photo library will open upon pressing this button
+    
+    [self.pickerForTakePhoto setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.pickerForTakePhoto animated:YES completion:NULL];
+
 }
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    //The imagePickerController is dismissed and the previewImage UIIMage is set to display the image the user picks or captures.
+    self.chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self.previewImage setImage:self.chosenImage];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+-(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    //If the user cancels the process of choosing an image or capturing one, the imagePickerController is dismissed:
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
+
+
 
 - (IBAction)chooseLocationButton:(id)sender {
 }
