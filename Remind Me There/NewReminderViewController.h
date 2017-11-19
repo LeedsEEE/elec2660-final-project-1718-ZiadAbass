@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewReminderViewController : UIViewController
+@interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+
+@property UIImagePickerController *pickerForTakePhoto;
+@property UIImagePickerController *pickerForChooseExisting;
+
+@property UIImage *chosenImage;
+
+
+
+@property (weak, nonatomic) IBOutlet UITextField *reminderLabelText;
 
 - (IBAction)reminderTypeSegmented:(UISegmentedControl *)sender;
 

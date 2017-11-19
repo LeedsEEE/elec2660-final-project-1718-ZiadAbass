@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
@@ -32,6 +31,8 @@
 
 
 - (IBAction)reminderTypeSegmented:(UISegmentedControl *)sender {
+    
+    //Only display either text field or 'Take Photo' and 'Choose Existing' buttons depending on the segmentedView selection:
     
     if (sender.selectedSegmentIndex == 0 ){
         self.reminderText.hidden = NO;

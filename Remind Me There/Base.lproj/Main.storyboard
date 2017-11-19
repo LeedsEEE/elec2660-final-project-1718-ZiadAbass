@@ -61,43 +61,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Xf-Zc-FCy">
-                                <rect key="frame" x="40" y="149" width="295" height="29"/>
-                                <segments>
-                                    <segment title="Text"/>
-                                    <segment title="Photo"/>
-                                </segments>
-                                <connections>
-                                    <action selector="reminderTypeSegmented:" destination="8rJ-Kc-sve" eventType="valueChanged" id="6dw-79-AdA"/>
-                                </connections>
-                            </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type reminder text here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-40-4O7">
-                                <rect key="frame" x="50" y="205" width="275" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="pzh-jc-RIY"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E0-L2-edD">
-                                <rect key="frame" x="40" y="295" width="90" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Take Photo"/>
-                                <connections>
-                                    <action selector="takePhotoButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gFe-32-aCn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSL-af-o7i">
-                                <rect key="frame" x="205" y="295" width="130" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Choose Existing"/>
-                                <connections>
-                                    <action selector="chooseExistingPhoto:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uy8-0Q-2fH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-6z-xTn">
-                                <rect key="frame" x="119.5" y="359" width="136" height="34"/>
+                                <rect key="frame" x="119" y="334" width="136" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Choose Location"/>
                                 <connections>
@@ -113,33 +78,77 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
-                                <rect key="frame" x="15" y="416" width="210" height="187"/>
+                                <rect key="frame" x="15" y="383" width="220" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="2NS-e2-faP"/>
-                                    <constraint firstAttribute="height" constant="187" id="3gp-5A-6lR"/>
+                                    <constraint firstAttribute="width" constant="220" id="2NS-e2-faP"/>
+                                    <constraint firstAttribute="height" constant="220" id="3gp-5A-6lR"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder label..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-hJ-7fm">
+                                <rect key="frame" x="40" y="155" width="215" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Xf-Zc-FCy">
+                                <rect key="frame" x="40" y="205" width="295" height="29"/>
+                                <segments>
+                                    <segment title="Text"/>
+                                    <segment title="Photo"/>
+                                </segments>
+                                <connections>
+                                    <action selector="reminderTypeSegmented:" destination="8rJ-Kc-sve" eventType="valueChanged" id="6dw-79-AdA"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type reminder text here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-40-4O7">
+                                <rect key="frame" x="40" y="253" width="285" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="pzh-jc-RIY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E0-L2-edD">
+                                <rect key="frame" x="40" y="343" width="90" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhotoButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gFe-32-aCn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSL-af-o7i">
+                                <rect key="frame" x="205" y="343" width="130" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Choose Existing"/>
+                                <connections>
+                                    <action selector="chooseExistingPhoto:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uy8-0Q-2fH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="hGb-40-4O7" secondAttribute="trailing" constant="50" id="0Bl-CM-qMU"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="jw8-NB-mJs" secondAttribute="trailing" constant="25" id="1B5-0p-bu1"/>
                             <constraint firstItem="QSL-af-o7i" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="1sP-Cq-r0e"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="TJa-hJ-7fm" secondAttribute="trailing" constant="120" id="20o-rJ-2mS"/>
                             <constraint firstItem="uJX-t5-v1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="23R-7M-mzM"/>
                             <constraint firstItem="qZY-6z-xTn" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="BvA-o6-wpJ"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="19" id="Fq5-51-DNP"/>
-                            <constraint firstItem="hGb-40-4O7" firstAttribute="top" secondItem="9Xf-Zc-FCy" secondAttribute="bottom" constant="28" id="Jah-ct-3Ce"/>
+                            <constraint firstItem="hGb-40-4O7" firstAttribute="top" secondItem="9Xf-Zc-FCy" secondAttribute="bottom" constant="20" id="Jah-ct-3Ce"/>
+                            <constraint firstItem="9Xf-Zc-FCy" firstAttribute="top" secondItem="TJa-hJ-7fm" secondAttribute="bottom" constant="20" id="RXG-XF-BMi"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="TCp-Di-XKL"/>
-                            <constraint firstItem="9Xf-Zc-FCy" firstAttribute="top" secondItem="Kxj-SY-8oV" secondAttribute="bottom" constant="19" id="Xmg-8d-4VF"/>
+                            <constraint firstItem="TJa-hJ-7fm" firstAttribute="top" secondItem="Kxj-SY-8oV" secondAttribute="bottom" constant="25" id="UZe-eP-o9I"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="QSL-af-o7i" secondAttribute="trailing" constant="40" id="XqI-0f-THs"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="YQh-SI-HPR"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="qZY-6z-xTn" secondAttribute="bottom" constant="250" id="dcy-Qq-twt"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="e3H-tA-y2f"/>
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="etD-1Y-eai"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="jw8-NB-mJs" secondAttribute="bottom" constant="30" id="fVr-vg-E9i"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="9Xf-Zc-FCy" secondAttribute="trailing" constant="40" id="jh4-WQ-FKA"/>
-                            <constraint firstItem="hGb-40-4O7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="50" id="w4l-y4-sSV"/>
-                            <constraint firstItem="qZY-6z-xTn" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="30" id="woe-gy-eeQ"/>
+                            <constraint firstItem="hGb-40-4O7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="w4l-y4-sSV"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="uJX-t5-v1d" secondAttribute="bottom" constant="15" id="yIc-Ab-gcn"/>
+                            <constraint firstItem="TJa-hJ-7fm" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="ybA-R6-Bmf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -148,13 +157,14 @@
                     <connections>
                         <outlet property="chooseExistingButtonOutlet" destination="QSL-af-o7i" id="9ra-sx-Xw9"/>
                         <outlet property="previewImage" destination="uJX-t5-v1d" id="GtT-7T-bp5"/>
+                        <outlet property="reminderLabelText" destination="TJa-hJ-7fm" id="7kv-L4-sEH"/>
                         <outlet property="reminderText" destination="hGb-40-4O7" id="zQy-iR-B2E"/>
                         <outlet property="takePhotoButtonOutlet" destination="8E0-L2-edD" id="TyE-AH-OmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="1669"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="1668.2158920539732"/>
         </scene>
         <!--View Reminder-->
         <scene sceneID="JlR-Zu-Grr">
