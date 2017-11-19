@@ -17,6 +17,7 @@
 		9906ED801FC0A11700821624 /* Remind_Me_ThereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED7F1FC0A11700821624 /* Remind_Me_ThereTests.m */; };
 		9906ED8B1FC0A11700821624 /* Remind_Me_ThereUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED8A1FC0A11700821624 /* Remind_Me_ThereUITests.m */; };
 		9906ED9A1FC0E61800821624 /* ViewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED991FC0E61800821624 /* ViewReminderViewController.m */; };
+		99BE41E81FC1E0F800D21A5F /* AbstractBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9906ED8C1FC0A11700821624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9906ED981FC0E61800821624 /* ViewReminderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewReminderViewController.h; sourceTree = "<group>"; };
 		9906ED991FC0E61800821624 /* ViewReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewReminderViewController.m; sourceTree = "<group>"; };
+		99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AbstractBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9906ED711FC0A11700821624 /* LaunchScreen.storyboard */,
 				9906ED741FC0A11700821624 /* Info.plist */,
 				9906ED751FC0A11700821624 /* main.m */,
+				99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */,
 			);
 			path = "Remind Me There";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9906ED731FC0A11700821624 /* LaunchScreen.storyboard in Resources */,
+				99BE41E81FC1E0F800D21A5F /* AbstractBackground.png in Resources */,
 				9906ED701FC0A11700821624 /* Assets.xcassets in Resources */,
 				9906ED6E1FC0A11700821624 /* Main.storyboard in Resources */,
 			);
@@ -445,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X2JQ34LJK9;
 				INFOPLIST_FILE = "Remind Me There/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.Remind-Me-There";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -459,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X2JQ34LJK9;
 				INFOPLIST_FILE = "Remind Me There/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.Remind-Me-There";
 				PRODUCT_NAME = "$(TARGET_NAME)";
