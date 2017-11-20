@@ -79,8 +79,10 @@
     
     //The imagePickerController is dismissed and the previewImage UIIMage is set to display the image the user picks or captures.
     self.chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
     [self.previewImage setImage:self.chosenImage];
     [self dismissViewControllerAnimated:YES completion:NULL];
+    
     
 }
 

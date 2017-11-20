@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -56,52 +56,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxj-SY-8oV">
-                                <rect key="frame" x="16" y="83" width="265" height="47"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="83" width="269.5" height="52"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <color key="textColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-6z-xTn">
-                                <rect key="frame" x="119" y="334" width="136" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Choose Location"/>
-                                <connections>
-                                    <action selector="chooseLocationButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bS5-D4-Hyt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw8-NB-mJs">
-                                <rect key="frame" x="302" y="549" width="48" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveReminderButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="0yJ-sO-7Qh"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
-                                <rect key="frame" x="15" y="383" width="220" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="2NS-e2-faP"/>
-                                    <constraint firstAttribute="height" constant="220" id="3gp-5A-6lR"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder label..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-hJ-7fm">
-                                <rect key="frame" x="40" y="155" width="215" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Xf-Zc-FCy">
-                                <rect key="frame" x="40" y="205" width="295" height="29"/>
+                                <rect key="frame" x="40" y="210" width="295" height="29"/>
                                 <segments>
                                     <segment title="Text"/>
                                     <segment title="Photo"/>
                                 </segments>
+                                <color key="tintColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="reminderTypeSegmented:" destination="8rJ-Kc-sve" eventType="valueChanged" id="6dw-79-AdA"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type reminder text here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-40-4O7">
-                                <rect key="frame" x="40" y="253" width="285" height="60"/>
+                                <rect key="frame" x="40" y="258" width="285" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="pzh-jc-RIY"/>
                                 </constraints>
@@ -110,21 +82,62 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E0-L2-edD">
-                                <rect key="frame" x="40" y="343" width="90" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Take Photo"/>
+                                <rect key="frame" x="40" y="348" width="100" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="takePhotoButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gFe-32-aCn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSL-af-o7i">
-                                <rect key="frame" x="205" y="343" width="130" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Choose Existing"/>
+                                <rect key="frame" x="191" y="348" width="144" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Choose Existing">
+                                    <color key="titleColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="chooseExistingPhoto:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uy8-0Q-2fH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw8-NB-mJs">
+                                <rect key="frame" x="305" y="550" width="45" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveReminderButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="0yJ-sO-7Qh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
+                                <rect key="frame" x="15" y="469" width="250" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="2NS-e2-faP"/>
+                                    <constraint firstAttribute="height" constant="134" id="95o-vF-Lwa"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder label..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-hJ-7fm">
+                                <rect key="frame" x="40" y="160" width="215" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-6z-xTn">
+                                <rect key="frame" x="112" y="411" width="151" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Choose Location">
+                                    <color key="titleColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseLocationButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bS5-D4-Hyt"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chr-H4-UOD">
+                                <rect key="frame" x="40" y="450" width="113" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -139,9 +152,9 @@
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="top" secondItem="TJa-hJ-7fm" secondAttribute="bottom" constant="20" id="RXG-XF-BMi"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="TCp-Di-XKL"/>
                             <constraint firstItem="TJa-hJ-7fm" firstAttribute="top" secondItem="Kxj-SY-8oV" secondAttribute="bottom" constant="25" id="UZe-eP-o9I"/>
+                            <constraint firstItem="qZY-6z-xTn" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="25" id="W3S-2Z-h5C"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="QSL-af-o7i" secondAttribute="trailing" constant="40" id="XqI-0f-THs"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="YQh-SI-HPR"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="qZY-6z-xTn" secondAttribute="bottom" constant="250" id="dcy-Qq-twt"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="e3H-tA-y2f"/>
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="etD-1Y-eai"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="jw8-NB-mJs" secondAttribute="bottom" constant="30" id="fVr-vg-E9i"/>
@@ -156,7 +169,7 @@
                     <navigationItem key="navigationItem" id="wuE-UU-StJ"/>
                     <connections>
                         <outlet property="chooseExistingButtonOutlet" destination="QSL-af-o7i" id="9ra-sx-Xw9"/>
-                        <outlet property="previewImage" destination="uJX-t5-v1d" id="GtT-7T-bp5"/>
+                        <outlet property="previewImage" destination="uJX-t5-v1d" id="Rmr-L8-f2v"/>
                         <outlet property="reminderLabelText" destination="TJa-hJ-7fm" id="7kv-L4-sEH"/>
                         <outlet property="reminderText" destination="hGb-40-4O7" id="zQy-iR-B2E"/>
                         <outlet property="takePhotoButtonOutlet" destination="8E0-L2-edD" id="TyE-AH-OmA"/>
@@ -189,6 +202,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="tintColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.51434212232428944" green="0.5268095612279321" blue="0.56421187793886007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
