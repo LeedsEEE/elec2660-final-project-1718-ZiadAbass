@@ -30,7 +30,11 @@
 - (IBAction)chooseExistingPhoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *chooseExistingButtonOutlet;
 
-@property (weak, nonatomic) IBOutlet UIImageView *previewImage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *landscapePreviewImage;
+@property (weak, nonatomic) IBOutlet UIImageView *portraitPreviewImage;
+@property (weak, nonatomic) IBOutlet UIImageView *squarePreviewImage;
+
 
 - (IBAction)chooseLocationButton:(id)sender;
 

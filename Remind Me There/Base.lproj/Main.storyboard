@@ -112,9 +112,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
-                                <rect key="frame" x="15" y="469" width="250" height="134"/>
+                                <rect key="frame" x="15" y="469" width="220" height="134"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="2NS-e2-faP"/>
+                                    <constraint firstAttribute="width" constant="220" id="2NS-e2-faP"/>
                                     <constraint firstAttribute="height" constant="134" id="95o-vF-Lwa"/>
                                 </constraints>
                             </imageView>
@@ -134,9 +134,19 @@
                                     <action selector="chooseLocationButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bS5-D4-Hyt"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chr-H4-UOD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="chr-H4-UOD">
                                 <rect key="frame" x="40" y="450" width="113" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="YtJ-Ir-uhc"/>
+                                    <constraint firstAttribute="width" constant="113" id="zmK-hS-PmC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-eI-0IS">
+                                <rect key="frame" x="40" y="457" width="146" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="Gyg-IJ-EVr"/>
+                                    <constraint firstAttribute="width" constant="146" id="Iu5-cK-HY5"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -144,9 +154,13 @@
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="hGb-40-4O7" secondAttribute="trailing" constant="50" id="0Bl-CM-qMU"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="jw8-NB-mJs" secondAttribute="trailing" constant="25" id="1B5-0p-bu1"/>
                             <constraint firstItem="QSL-af-o7i" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="1sP-Cq-r0e"/>
+                            <constraint firstItem="e9R-eI-0IS" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="20j-YI-b9x"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="TJa-hJ-7fm" secondAttribute="trailing" constant="120" id="20o-rJ-2mS"/>
                             <constraint firstItem="uJX-t5-v1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="23R-7M-mzM"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="chr-H4-UOD" secondAttribute="bottom" constant="15" id="3fg-B9-wf5"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="e9R-eI-0IS" secondAttribute="bottom" constant="15" id="8qP-p5-3Ta"/>
                             <constraint firstItem="qZY-6z-xTn" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="BvA-o6-wpJ"/>
+                            <constraint firstItem="chr-H4-UOD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="DGB-9e-HWE"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="19" id="Fq5-51-DNP"/>
                             <constraint firstItem="hGb-40-4O7" firstAttribute="top" secondItem="9Xf-Zc-FCy" secondAttribute="bottom" constant="20" id="Jah-ct-3Ce"/>
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="top" secondItem="TJa-hJ-7fm" secondAttribute="bottom" constant="20" id="RXG-XF-BMi"/>
@@ -169,9 +183,11 @@
                     <navigationItem key="navigationItem" id="wuE-UU-StJ"/>
                     <connections>
                         <outlet property="chooseExistingButtonOutlet" destination="QSL-af-o7i" id="9ra-sx-Xw9"/>
-                        <outlet property="previewImage" destination="uJX-t5-v1d" id="Rmr-L8-f2v"/>
+                        <outlet property="landscapePreviewImage" destination="uJX-t5-v1d" id="vEI-3p-bNM"/>
+                        <outlet property="portraitPreviewImage" destination="chr-H4-UOD" id="aod-Qc-XTb"/>
                         <outlet property="reminderLabelText" destination="TJa-hJ-7fm" id="7kv-L4-sEH"/>
                         <outlet property="reminderText" destination="hGb-40-4O7" id="zQy-iR-B2E"/>
+                        <outlet property="squarePreviewImage" destination="e9R-eI-0IS" id="Vgl-br-nrF"/>
                         <outlet property="takePhotoButtonOutlet" destination="8E0-L2-edD" id="TyE-AH-OmA"/>
                     </connections>
                 </viewController>
