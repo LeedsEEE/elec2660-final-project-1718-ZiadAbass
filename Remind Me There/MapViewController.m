@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "SearchLocationTableView.h"
 
 @interface MapViewController ()
 
@@ -32,6 +33,14 @@
     CLLocation *currentUserLocation = self.location.location;
     CLLocationCoordinate2D locationCoordinates = currentUserLocation.coordinate;
     self.userMap.region = MKCoordinateRegionMake(locationCoordinates, MKCoordinateSpanMake(0.01, 0.01));
+    
+    
+    // Creating a main.storyboard object to use to create an object for the table view:
+    UIStoryboard *myStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    // Creating an object for SearchLocationTableView to use in this main file:
+    SearchLocationTableView *searchLocationTable = [myStoryboard instantiateViewControllerWithIdentifier:@"SearchLocationTableView"];
+    
+    
     
     
     
