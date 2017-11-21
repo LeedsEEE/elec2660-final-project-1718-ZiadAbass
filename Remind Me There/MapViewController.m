@@ -48,6 +48,12 @@
     self.searchResultsController.searchResultsUpdater = searchLocationTable;
     
     
+    // Create a UISearchBar object and sets it to be installed in the interface:
+    UISearchBar *locationSearchBar = self.searchResultsController.searchBar;
+    // Display the search bar in center of navigation bar when receiver is top item:
+    self.navigationItem.titleView = self.searchResultsController.searchBar;
+    
+    
     
 }
 
