@@ -220,7 +220,7 @@
                         <viewLayoutGuide key="safeArea" id="eDB-dU-84W"/>
                     </view>
                     <connections>
-                        <outlet property="myMap" destination="hLk-j9-tol" id="AWo-dm-JS6"/>
+                        <outlet property="userMap" destination="hLk-j9-tol" id="hnC-ap-gXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkc-Pv-uCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
