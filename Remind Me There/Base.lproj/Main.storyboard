@@ -34,7 +34,13 @@
         <scene sceneID="WxW-EH-nLn">
             <objects>
                 <navigationController id="Ga1-SO-JeM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Reminder" id="cuE-2M-pC8"/>
+                    <tabBarItem key="tabBarItem" title="New Reminder" id="cuE-2M-pC8">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.17851360103626945" green="0.17851360103626945" blue="0.17851360103626945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZbL-CM-hH0">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -257,7 +263,12 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="tintColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.51434212232428944" green="0.5268095612279321" blue="0.56421187793886007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.49821524029582281" green="0.5153282360229845" blue="0.55114556347150256" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.30954501295336789" green="0.30954501295336789" blue="0.30954501295336789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
