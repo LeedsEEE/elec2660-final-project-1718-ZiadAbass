@@ -41,6 +41,11 @@
     SearchLocationTableView *searchLocationTable = [myStoryboard instantiateViewControllerWithIdentifier:@"SearchLocationTableView"];
     
     
+    // Initialising the UISearchController object, returning a search controller in "SearchLocationTableView" to display search results:
+    self.searchResultsController = [[UISearchController alloc] initWithSearchResultsController:searchLocationTable];
+    
+    // Use the "SearchLocationTableView" to update the search results.
+    self.searchResultsController.searchResultsUpdater = searchLocationTable;
     
     
     

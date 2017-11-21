@@ -24,6 +24,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController; {
+    
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

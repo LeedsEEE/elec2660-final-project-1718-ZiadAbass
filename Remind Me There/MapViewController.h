@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) CLLocationManager *location;
 
+@property (strong, nonatomic) UISearchController *searchResultsController;
 
 @end
