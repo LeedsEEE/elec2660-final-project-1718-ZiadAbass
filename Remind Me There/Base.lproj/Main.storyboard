@@ -245,7 +245,7 @@
         <!--Search Location Table View-->
         <scene sceneID="1WP-0w-xEp">
             <objects>
-                <tableViewController id="9G5-Ha-ut7" customClass="SearchLocationTableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchLocationTableView" id="9G5-Ha-ut7" customClass="SearchLocationTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BqQ-nS-Mm0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

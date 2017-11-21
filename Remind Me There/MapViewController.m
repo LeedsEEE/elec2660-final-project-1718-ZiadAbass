@@ -53,6 +53,13 @@
     // Display the search bar in center of navigation bar when receiver is top item:
     self.navigationItem.titleView = self.searchResultsController.searchBar;
     
+    // Customising the search bar:
+    self.searchResultsController.hidesNavigationBarDuringPresentation = NO;
+    self.searchResultsController.dimsBackgroundDuringPresentation = YES;
+    [locationSearchBar sizeToFit];
+    locationSearchBar.placeholder = @"Search for places...";
+    // Preventing the search results from covering the search bar:
+    self.definesPresentationContext = YES;
     
     
 }
