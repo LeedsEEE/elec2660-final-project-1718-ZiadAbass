@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *userMap;
 
-@property (strong, nonatomic) CLLocationManager *currentLocation;
+@property (strong, nonatomic) CLLocationManager *location;
 
 
 @end

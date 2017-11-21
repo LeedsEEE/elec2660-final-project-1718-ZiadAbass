@@ -17,14 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.currentLocation = [[CLLocationManager alloc] init];
+    self.location = [[CLLocationManager alloc] init];
     
     self.userMap.delegate = self;
-    self.currentLocation.delegate = self;
+    self.location.delegate = self;
     
-    [self.currentLocation requestWhenInUseAuthorization];
+    //Only shows user's location when they authorise:
+    [self.location requestWhenInUseAuthorization];
     
+    //Display the user's location on the map as a blue dot:
     self.userMap.showsUserLocation = YES;
+    
+    //Open the map zoomed in and centered around the user's location:
+    CLLocation *currentUserLocation = self.location.location;
+    CLLocationCoordinate2D locationCoordinates = currentUserLocation.coordinate;
+    self.userMap.region = MKCoordinateRegionMake(locationCoordinates, MKCoordinateSpanMake(0.01, 0.01));
+    
+    
     
 }
 
