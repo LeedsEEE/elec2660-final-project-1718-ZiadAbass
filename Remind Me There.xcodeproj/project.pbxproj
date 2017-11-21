@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99056C361FC45B060049C047 /* SearchLocationTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99056C351FC45B060049C047 /* SearchLocationTableView.m */; };
 		9906ED651FC0A11700821624 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED641FC0A11700821624 /* AppDelegate.m */; };
 		9906ED681FC0A11700821624 /* ExistingRemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED671FC0A11700821624 /* ExistingRemindersViewController.m */; };
 		9906ED6B1FC0A11700821624 /* NewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED6A1FC0A11700821624 /* NewReminderViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99056C341FC45B060049C047 /* SearchLocationTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchLocationTableView.h; sourceTree = "<group>"; };
+		99056C351FC45B060049C047 /* SearchLocationTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchLocationTableView.m; sourceTree = "<group>"; };
 		9906ED601FC0A11700821624 /* Remind Me There.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remind Me There.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9906ED631FC0A11700821624 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9906ED641FC0A11700821624 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				9906ED6C1FC0A11700821624 /* Main.storyboard */,
 				999E60E01FC3B4C300167632 /* MapViewController.h */,
 				999E60E11FC3B4C300167632 /* MapViewController.m */,
+				99056C341FC45B060049C047 /* SearchLocationTableView.h */,
+				99056C351FC45B060049C047 /* SearchLocationTableView.m */,
 				9906ED981FC0E61800821624 /* ViewReminderViewController.h */,
 				9906ED991FC0E61800821624 /* ViewReminderViewController.m */,
 				9906ED6F1FC0A11700821624 /* Assets.xcassets */,
@@ -301,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9906ED6B1FC0A11700821624 /* NewReminderViewController.m in Sources */,
+				99056C361FC45B060049C047 /* SearchLocationTableView.m in Sources */,
 				9906ED651FC0A11700821624 /* AppDelegate.m in Sources */,
 				9906ED9A1FC0E61800821624 /* ViewReminderViewController.m in Sources */,
 				999E60E21FC3B4C300167632 /* MapViewController.m in Sources */,

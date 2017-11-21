@@ -111,10 +111,9 @@
 
 
 
-
+//If the user cancels the process of choosing an image or capturing one, the imagePickerController is dismissed:
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
-    //If the user cancels the process of choosing an image or capturing one, the imagePickerController is dismissed:
     [self dismissViewControllerAnimated:YES completion:NULL];
     
 }
@@ -148,7 +147,7 @@
 
 
 
-  // Hide keyboard when 'return' is pressed:
+  //Pressing 'return' key dismisses the keyboard:
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
