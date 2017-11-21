@@ -19,6 +19,13 @@
     
     self.currentLocation = [[CLLocationManager alloc] init];
     
+    self.userMap.delegate = self;
+    self.currentLocation.delegate = self;
+    
+    [self.currentLocation requestWhenInUseAuthorization];
+    
+    self.userMap.showsUserLocation = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
