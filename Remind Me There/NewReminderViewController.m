@@ -128,4 +128,22 @@
 
 - (IBAction)saveReminderButton:(id)sender {
 }
+
+
+
+
+  // Hide keyboard when 'return' is pressed:
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
+
+
+
+
+
+
 @end
