@@ -131,6 +131,22 @@
 
 
 
+  //Pressing anywhere on the background dismisses the keyboard:
+- (IBAction)pressedBackground:(id)sender {
+    
+    if ([self.reminderLabelText isFirstResponder]) {
+        [self.reminderLabelText resignFirstResponder];
+        
+    }
+
+    if ([self.reminderText isFirstResponder]) {
+        [self.reminderText resignFirstResponder];
+    
+    }
+}
+
+
+
 
   // Hide keyboard when 'return' is pressed:
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
