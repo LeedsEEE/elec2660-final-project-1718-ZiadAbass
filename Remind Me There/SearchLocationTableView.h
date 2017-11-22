@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface SearchLocationTableView : UITableViewController <UISearchResultsUpdating>
+
+// Array to store search results:
+@property NSArray<MKMapItem *> *matchingSearchResults;
+
+@property NSString *textInSearchBar;
+
+@property MKMapView *userMap;
 
 @end

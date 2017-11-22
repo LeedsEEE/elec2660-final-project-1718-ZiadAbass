@@ -61,6 +61,9 @@
     // Preventing the search results from covering the search bar:
     self.definesPresentationContext = YES;
     
+    // Transfer handling of the map from MapViewController to SearchLocationTableView:
+    searchLocationTable.userMap = self.userMap;
+    
     
 }
 

@@ -25,8 +25,13 @@
 }
 
 
-
+  // Setting up the search criteria and properties of the search process
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController; {
+    
+    self.textInSearchBar = searchController.searchBar.text;
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    searchRequest.naturalLanguageQuery = self.textInSearchBar;
+    searchRequest.region = self.userMap.region;
     
 }
 
