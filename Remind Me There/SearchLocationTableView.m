@@ -25,13 +25,21 @@
 }
 
 
-  // Setting up the search criteria and properties of the search process
+  // Setting up the search criteria, starting the search and storing the results:
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController; {
     
     self.textInSearchBar = searchController.searchBar.text;
     MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
     searchRequest.naturalLanguageQuery = self.textInSearchBar;
     searchRequest.region = self.userMap.region;
+    
+    // Create a search object, start the search and receive results.
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
+        
+        self.matchingSearchResults = response.mapItems;  // Fill up our array with the search results
+        [self.tableView reloadData];                     // Refresh table data
+    }];
     
 }
 
