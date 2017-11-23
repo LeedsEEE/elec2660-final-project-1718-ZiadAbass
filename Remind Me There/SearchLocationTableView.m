@@ -63,8 +63,13 @@
 }
 
 
+
+
+
+
   // Filling up the table's cells from the search results
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell" forIndexPath:indexPath];
     
     // Creating temporary search object to hold placemark information:
@@ -72,6 +77,13 @@
     selectedResult = self.matchingSearchResults[indexPath.row].placemark;
     
     cell.textLabel.text = selectedResult.name;
+    
+    
+    CNPostalAddress *address = selectedResult.postalAddress;
+    
+    NSLog(@"Address Line is: %@, %@, %@.", address.street, address.city, address.country);
+
+    
     
     return cell;
 }

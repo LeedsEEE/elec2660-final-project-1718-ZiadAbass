@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MapViewController.h"
+#import <Contacts/Contacts.h>
 
 @interface SearchLocationTableView : UITableViewController <UISearchResultsUpdating>
 
