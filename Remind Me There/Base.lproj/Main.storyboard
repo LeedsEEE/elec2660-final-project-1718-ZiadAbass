@@ -121,9 +121,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
-                                <rect key="frame" x="15" y="469" width="220" height="134"/>
+                                <rect key="frame" x="40" y="469" width="200" height="134"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="2NS-e2-faP"/>
+                                    <constraint firstAttribute="width" constant="200" id="2NS-e2-faP"/>
                                     <constraint firstAttribute="height" constant="134" id="95o-vF-Lwa"/>
                                 </constraints>
                             </imageView>
@@ -169,7 +169,7 @@
                             <constraint firstItem="QSL-af-o7i" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="1sP-Cq-r0e"/>
                             <constraint firstItem="e9R-eI-0IS" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="20j-YI-b9x"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="TJa-hJ-7fm" secondAttribute="trailing" constant="120" id="20o-rJ-2mS"/>
-                            <constraint firstItem="uJX-t5-v1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="15" id="23R-7M-mzM"/>
+                            <constraint firstItem="uJX-t5-v1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="23R-7M-mzM"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="chr-H4-UOD" secondAttribute="bottom" constant="15" id="3fg-B9-wf5"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="e9R-eI-0IS" secondAttribute="bottom" constant="15" id="8qP-p5-3Ta"/>
                             <constraint firstItem="qZY-6z-xTn" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="BvA-o6-wpJ"/>
