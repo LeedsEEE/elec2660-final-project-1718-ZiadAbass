@@ -72,10 +72,24 @@
     
     NSString *street = [NSString stringWithFormat:@"%@", address.street];
     NSString *town = [NSString stringWithFormat:@"%@", address.city];
-    NSString *country = [NSString stringWithFormat:@"%@", address.country];
+    //NSString *country = [NSString stringWithFormat:@"%@", address.country];
     
-    NSLog(@"Address Line is: %@, %@, %@.", street, town, country);
-    addressDetails = [NSString stringWithFormat:@"%@, %@, %@", street, town, country];
+
+    if (street == nil) {                                    // If no street available in database e.g. searched for Chicago.
+        
+        NSLog(@"Address Line is: %@, %@", address.city, address.country);
+        addressDetails = [NSString stringWithFormat:@"%@, %@", address.city, address.country];
+        
+    } else if ( ( street == nil) && ( town = nil) ) {      // If no street or city available in database e.g. searched for Switzerland.
+        
+        addressDetails = [NSString stringWithFormat:@"%@", address.country];
+        NSLog(@"Address Line is: %@", address.country);
+        
+    } else {                                                // If street, city and country available in database
+        
+        addressDetails = [NSString stringWithFormat:@"%@, %@, %@", address.street, address.city, address.country];
+        NSLog(@"Address Line is: %@, %@, %@", address.street, address.city, address.country);
+    }
     
     
     return addressDetails;
