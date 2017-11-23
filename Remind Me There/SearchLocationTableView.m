@@ -63,6 +63,24 @@
 }
 
 
+//Method for putting together the address line shown with each search result:
+-(NSString *)addressLine:(MKPlacemark *)selectedResult {
+    
+    NSString *addressDetails;
+    
+    CNPostalAddress *address = selectedResult.postalAddress;
+    
+    NSString *street = [NSString stringWithFormat:@"%@", address.street];
+    NSString *town = [NSString stringWithFormat:@"%@", address.city];
+    NSString *country = [NSString stringWithFormat:@"%@", address.country];
+    
+    NSLog(@"Address Line is: %@, %@, %@.", street, town, country);
+    addressDetails = [NSString stringWithFormat:@"%@, %@, %@", street, town, country];
+    
+    
+    return addressDetails;
+    
+}
 
 
 
@@ -72,16 +90,14 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell" forIndexPath:indexPath];
     
-    // Creating temporary search object to hold placemark information:
-    MKPlacemark *selectedResult;
-    selectedResult = self.matchingSearchResults[indexPath.row].placemark;
+    // Temporary search object (selectedResult) created in .h to hold placemark information
     
-    cell.textLabel.text = selectedResult.name;
+    self.selectedResult = self.matchingSearchResults[indexPath.row].placemark;
     
+    cell.textLabel.text = self.selectedResult.name;
     
-    CNPostalAddress *address = selectedResult.postalAddress;
-    
-    NSLog(@"Address Line is: %@, %@, %@.", address.street, address.city, address.country);
+    // Detail label of each cell shows the address line obtained from the method above:
+    cell.detailTextLabel.text = [self addressLine:self.selectedResult];
 
     
     

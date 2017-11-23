@@ -20,4 +20,6 @@
 
 @property MKMapView *userMap;
 
+@property MKPlacemark *selectedResult;
+
 @end
