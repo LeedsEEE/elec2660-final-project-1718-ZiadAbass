@@ -64,6 +64,9 @@
     // Transfer handling of the map from MapViewController to SearchLocationTableView:
     searchLocationTable.userMap = self.userMap;
     
+    // Passing a handle of MapViewController (parent) to SearchLocationTableView (child):
+    searchLocationTable.mapSearchProtocolDelegate = self;
+    
     
 }
 

@@ -10,7 +10,17 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController < MKMapViewDelegate, CLLocationManagerDelegate >
+
+@protocol MapSearchProtocol <NSObject>
+
+
+- (void) placePinOnMap:(MKPlacemark *)placemark;
+
+@end
+
+
+
+@interface MapViewController : UIViewController < MKMapViewDelegate, MapSearchProtocol , CLLocationManagerDelegate >
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *userMap;

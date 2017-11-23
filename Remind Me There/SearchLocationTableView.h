@@ -22,4 +22,8 @@
 
 @property MKPlacemark *selectedResult;
 
+
+// Creating a delegate variable to pass the handle of MapViewController (parent) to SearchLocationTableView (child) in viewDidLoad:
+@property id <MapSearchProtocol> mapSearchProtocolDelegate;
+
 @end
