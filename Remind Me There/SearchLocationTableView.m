@@ -62,15 +62,21 @@
     return self.matchingSearchResults.count;
 }
 
-/*
+
+  // Filling up the table's cells from the search results
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Creating temporary search object to hold placemark information:
+    MKPlacemark *selectedResult;
+    selectedResult = self.matchingSearchResults[indexPath.row].placemark;
+    
+    cell.textLabel.text = selectedResult.name;
     
     return cell;
 }
-*/
+
+
 
 /*
 // Override to support conditional editing of the table view.
