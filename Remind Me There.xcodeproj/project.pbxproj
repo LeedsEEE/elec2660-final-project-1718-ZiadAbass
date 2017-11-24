@@ -23,6 +23,7 @@
 		999E60E51FC3B7B500167632 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E41FC3B7AB00167632 /* CoreLocation.framework */; };
 		999E60E71FC3B7C300167632 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E61FC3B7BB00167632 /* MapKit.framework */; };
 		99BE41E81FC1E0F800D21A5F /* AbstractBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */; };
+		99F68E151FC8D68500F1C15D /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F68E141FC8D68500F1C15D /* Reminder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		999E60E41FC3B7AB00167632 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		999E60E61FC3B7BB00167632 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AbstractBackground.png; sourceTree = "<group>"; };
+		99F68E131FC8D68500F1C15D /* Reminder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		99F68E141FC8D68500F1C15D /* Reminder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				999E60E11FC3B4C300167632 /* MapViewController.m */,
 				99056C341FC45B060049C047 /* SearchLocationTableView.h */,
 				99056C351FC45B060049C047 /* SearchLocationTableView.m */,
+				99F68E131FC8D68500F1C15D /* Reminder.h */,
+				99F68E141FC8D68500F1C15D /* Reminder.m */,
 				9906ED981FC0E61800821624 /* ViewReminderViewController.h */,
 				9906ED991FC0E61800821624 /* ViewReminderViewController.m */,
 				9906ED6F1FC0A11700821624 /* Assets.xcassets */,
@@ -312,6 +317,7 @@
 				9906ED6B1FC0A11700821624 /* NewReminderViewController.m in Sources */,
 				99056C361FC45B060049C047 /* SearchLocationTableView.m in Sources */,
 				9906ED651FC0A11700821624 /* AppDelegate.m in Sources */,
+				99F68E151FC8D68500F1C15D /* Reminder.m in Sources */,
 				9906ED9A1FC0E61800821624 /* ViewReminderViewController.m in Sources */,
 				999E60E21FC3B4C300167632 /* MapViewController.m in Sources */,
 				9906ED761FC0A11700821624 /* main.m in Sources */,
