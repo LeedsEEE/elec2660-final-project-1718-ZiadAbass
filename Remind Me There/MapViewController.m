@@ -75,6 +75,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+- (void)placePinOnMap:(MKPlacemark *)placemark {
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setDouble:placemark.location.coordinate.longitude forKey:@"QLongtitude"];
+    [defaults setDouble:placemark.location.coordinate.latitude forKey:@"QLatitude"];
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.title = @"Chosen Location";
+    annotation.coordinate = placemark.location.coordinate;
+    
+    MKCoordinateRegion region = MKCoordinateRegionMake(placemark.coordinate, MKCoordinateSpanMake(0.05, 0.05));
+    [self.userMap setRegion:region animated:YES];
+    
+    [self.userMap addAnnotation:annotation];
+    [defaults synchronize];
+    
+}
+
+
+
+
 /*
 #pragma mark - Navigation
 
