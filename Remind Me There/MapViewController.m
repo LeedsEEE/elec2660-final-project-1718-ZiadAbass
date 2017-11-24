@@ -79,6 +79,9 @@
 // Method to use the information about the chosen cell in SearchLocationTableView to put a red pin at the chosen location on the map:
 - (void)placePinOnMap:(MKPlacemark *)placemark {
     
+    // Clear map of previous annotations:
+    [self.userMap removeAnnotations:self.userMap.annotations];
+    
     // Storing longtitude and latitude information of the chosen placemark in the user defaults:
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setDouble:placemark.location.coordinate.longitude forKey:@"QLongtitude"];
@@ -86,10 +89,10 @@
     
     // Setting properties of the annotation (ie the red pin)
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.title = @"Chosen Location";
+    annotation.title = placemark.name;
     annotation.coordinate = placemark.location.coordinate;
     
-    MKCoordinateRegion region = MKCoordinateRegionMake(placemark.coordinate, MKCoordinateSpanMake(0.05, 0.05));
+    MKCoordinateRegion region = MKCoordinateRegionMake(placemark.coordinate, MKCoordinateSpanMake(0.04, 0.04));
     [self.userMap setRegion:region animated:YES];
     
     // Place the annotation on the map:
