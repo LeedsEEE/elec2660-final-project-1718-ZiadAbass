@@ -119,6 +119,17 @@
 }
 
 
+// Identifying which cell of the results has been selected by the user and using it to place a pin on the map on its location:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Temporary object to hold placemark information:
+    MKPlacemark *selectedItem = self.matchingSearchResults[indexPath.row].placemark;
+    // Run the method in MapViewController to place red pin on map:
+    [self.mapSearchProtocolDelegate placePinOnMap:(selectedItem)];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
