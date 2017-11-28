@@ -10,7 +10,7 @@
 #import "MapViewController.h"
 #import "Reminder.h"
 
-@interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 
 
 @property UIImagePickerController *pickerForTakePhoto;
@@ -50,6 +50,7 @@
 @property NSMutableArray *reminderArray;
 
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 
 @end

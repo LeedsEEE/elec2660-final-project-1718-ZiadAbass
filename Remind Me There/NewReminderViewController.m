@@ -27,6 +27,10 @@
     self.pickerForTakePhoto.delegate = self;
     self.pickerForChooseExisting.delegate = self;
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    
 }
 
 
