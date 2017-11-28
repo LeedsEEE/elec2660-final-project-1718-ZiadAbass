@@ -127,10 +127,27 @@
 
 - (IBAction)saveReminderButton:(id)sender {
     
+    // Setting up the array:
     self.reminderArray = [NSMutableArray array];
     
+    // Allocaing memory and initialising:
     Reminder *newReminder = [[Reminder alloc] init];
     
+    // Pulling PNG data from the chosen image:
+    NSData *imagePngData = UIImagePNGRepresentation(self.chosenImage);
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    CLLocationDegrees longitude = [defaults doubleForKey:@"QLongitude"];
+    CLLocationDegrees latitude = [defaults doubleForKey:@"QLatitude"];
+    
+
+    // Setting the properties of the reminder:
+    newReminder.reminderLabel = self.reminderLabelText.text;
+    newReminder.reminderText = self.reminderText.text;
+    newReminder.reminderPhotoData = imagePngData;
+    newReminder.reminderLongitude = &(longitude);
+    newReminder.reminderLatitude = &(latitude);
     
     
     

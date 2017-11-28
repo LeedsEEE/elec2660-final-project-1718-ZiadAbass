@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
 #import "Reminder.h"
 
 @interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
