@@ -131,6 +131,8 @@
 
 - (IBAction)saveReminderButton:(id)sender {
     
+    [self.locationManager requestAlwaysAuthorization];
+    
     // Setting up the array:
     self.reminderArray = [NSMutableArray array];
     
@@ -168,12 +170,43 @@
     centre.latitude = *(newReminder.reminderLatitude);
     centre.longitude = *(newReminder.reminderLongitude);
     
+    
     // Defining the reminder's region based on the user's choice:
     CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:@"Test123"];
     
+    [self.locationManager startMonitoringForRegion:region];
     
+    region.notifyOnEntry = YES;
+    region.notifyOnExit = NO;
+    
+
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager
+         didEnterRegion:(CLRegion *)region{
+    
+    NSLog(@"Entered region");
     
 }
+
+
+
+- (void)locationManager:(CLLocationManager *)manager
+          didExitRegion:(CLRegion *)region{
+    
+    NSLog(@"Exited region");
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(nonnull NSError *)error {
+    
+    NSLog(@"Error");
+    
+}
+
+
 
 
 

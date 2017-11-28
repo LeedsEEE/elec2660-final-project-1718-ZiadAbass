@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <CoreLocation/CoreLocation.h>
 
 @interface Reminder : NSObject
 
@@ -16,5 +17,7 @@
 
 @property double *reminderLongitude;
 @property double *reminderLatitude;
+
+@property (nonatomic) CLLocationDegrees *reminderLocation;
 
 @end
