@@ -149,6 +149,24 @@
     newReminder.reminderLongitude = &(longitude);
     newReminder.reminderLatitude = &(latitude);
     
+    // Saving the data into the array:
+    [self.reminderArray addObject:newReminder];
+    
+    // Saving the array to the user defaults:
+    //[[NSUserDefaults standardUserDefaults] setObject:self.reminderArray forKey:@"reminderArray"];
+    
+    // Printing the coordinates of the chosen location:
+    NSLog(@"LONG OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLongitude"] );
+    NSLog(@"LAT OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLatitude"] );
+    
+    // Defining the centre point of the reminder's region:
+    CLLocationCoordinate2D centre;
+    centre.latitude = *(newReminder.reminderLatitude);
+    centre.longitude = *(newReminder.reminderLongitude);
+    
+    // Defining the reminder's region based on the user's choice:
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:@"Test123"];
+    
     
     
 }
