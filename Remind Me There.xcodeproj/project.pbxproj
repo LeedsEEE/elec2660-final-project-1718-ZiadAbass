@@ -248,6 +248,11 @@
 					9906ED5F1FC0A11700821624 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					9906ED7A1FC0A11700821624 = {
 						CreatedOnToolsVersion = 9.1;

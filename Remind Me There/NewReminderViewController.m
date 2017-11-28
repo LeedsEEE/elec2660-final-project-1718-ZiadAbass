@@ -126,6 +126,14 @@
 }
 
 - (IBAction)saveReminderButton:(id)sender {
+    
+    self.reminderArray = [NSMutableArray array];
+    
+    Reminder *newReminder = [[Reminder alloc] init];
+    
+    
+    
+    
 }
 
 

@@ -82,9 +82,9 @@
     // Clear map of previous annotations:
     [self.userMap removeAnnotations:self.userMap.annotations];
     
-    // Storing longtitude and latitude information of the chosen placemark in the user defaults:
+    // Storing longitude and latitude information of the chosen placemark in the user defaults:
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setDouble:placemark.location.coordinate.longitude forKey:@"QLongtitude"];
+    [defaults setDouble:placemark.location.coordinate.longitude forKey:@"QLongitude"];
     [defaults setDouble:placemark.location.coordinate.latitude forKey:@"QLatitude"];
     
     // Setting properties of the annotation (ie the red pin)

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reminder.h"
 
 @interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -42,6 +43,11 @@
 
 
 - (IBAction)pressedBackground:(id)sender;
+
+
+
+@property NSMutableArray *reminderArray;
+
 
 
 

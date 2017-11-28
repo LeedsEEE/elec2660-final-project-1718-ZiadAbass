@@ -13,7 +13,5 @@
 @property (strong, nonatomic) NSString *reminderLabel;
 @property (strong, nonatomic) NSString *reminderText;
 @property (strong, nonatomic) NSData *reminderPhotoData;
-@property float *reminderLongtitude;
-@property float *reminderLatitude;
 
 @end
