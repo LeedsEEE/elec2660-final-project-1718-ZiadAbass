@@ -74,6 +74,7 @@
 		99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AbstractBackground.png; sourceTree = "<group>"; };
 		99F68E131FC8D68500F1C15D /* Reminder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		99F68E141FC8D68500F1C15D /* Reminder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		99FBDEC11FCD9FB6003E54E4 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +174,7 @@
 		999E60E31FC3B7AA00167632 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99FBDEC11FCD9FB6003E54E4 /* UserNotifications.framework */,
 				9927AD231FC7654C002764BE /* Contacts.framework */,
 				999E60E61FC3B7BB00167632 /* MapKit.framework */,
 				999E60E41FC3B7AB00167632 /* CoreLocation.framework */,

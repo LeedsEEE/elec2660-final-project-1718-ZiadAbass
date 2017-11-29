@@ -15,7 +15,13 @@
 @implementation NewReminderViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    
+    self.reminderArray = [NSMutableArray array];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.reminderArray = [defaults objectForKey:@"kReminderArray"];
     
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
@@ -29,7 +35,6 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    
     
 }
 
@@ -133,9 +138,6 @@
     
     [self.locationManager requestAlwaysAuthorization];
     
-    // Setting up the array:
-    self.reminderArray = [NSMutableArray array];
-    
     // Allocaing memory and initialising:
     Reminder *newReminder = [[Reminder alloc] init];
     
@@ -155,12 +157,6 @@
     newReminder.reminderLongitude = &(longitude);
     newReminder.reminderLatitude = &(latitude);
     
-    // Saving the data into the array:
-    [self.reminderArray addObject:newReminder];
-    
-    // Saving the array to the user defaults:
-    //[[NSUserDefaults standardUserDefaults] setObject:self.reminderArray forKey:@"reminderArray"];
-    
     // Printing the coordinates of the chosen location:
     NSLog(@"LONG OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLongitude"] );
     NSLog(@"LAT OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLatitude"] );
@@ -172,13 +168,24 @@
     
     
     // Defining the reminder's region based on the user's choice:
-    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:@"Test123"];
+    //CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:@"ReminderOne"];
     
-    [self.locationManager startMonitoringForRegion:region];
+    //Random identifier:
+    newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
     
-    region.notifyOnEntry = YES;
-    region.notifyOnExit = NO;
+    [self.locationManager startMonitoringForRegion:newReminder.region];
     
+    newReminder.region.notifyOnEntry = YES;
+    newReminder.region.notifyOnExit = NO;
+    
+    
+    
+    // Saving the data into the array:
+    [self.reminderArray addObject:newReminder];
+    
+    // Saving the array to the user defaults:
+    [defaults setObject:self.reminderArray forKey:@"kReminderArray"];
+
 
 }
 
@@ -186,16 +193,21 @@
 - (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region{
     
-    NSLog(@"Entered region");
     
+       //if([[region identifier] isEqualToString:@"ReminderOne"]){
+           
+           NSLog(@"Entered region");
+    
+       //}
 }
 
 
 
 - (void)locationManager:(CLLocationManager *)manager
           didExitRegion:(CLRegion *)region{
+
+            NSLog(@"Exited region");
     
-    NSLog(@"Exited region");
     
 }
 

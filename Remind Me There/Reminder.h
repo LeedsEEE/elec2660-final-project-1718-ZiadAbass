@@ -18,6 +18,8 @@
 @property double *reminderLongitude;
 @property double *reminderLatitude;
 
+@property CLCircularRegion *region;
+
 @property (nonatomic) CLLocationDegrees *reminderLocation;
 
 @end
