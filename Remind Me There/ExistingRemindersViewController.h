@@ -11,5 +11,8 @@
 @interface ExistingRemindersViewController : UIViewController
 
 
+@property (weak, nonatomic) IBOutlet UITableView *existingRemindersTable;
+
+
 @end
 

@@ -168,10 +168,13 @@
     
     
     // Defining the reminder's region based on the user's choice:
-    //CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:@"ReminderOne"];
+    //CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"Reminder %lu", (unsigned long)_reminderArray.count]];
     
     //Random identifier:
-    newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
+    //newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
+    
+    newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"reminder%lu", self.reminderArray.count]];
+    
     
     [self.locationManager startMonitoringForRegion:newReminder.region];
     
