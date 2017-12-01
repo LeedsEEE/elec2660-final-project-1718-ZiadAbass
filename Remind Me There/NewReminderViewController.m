@@ -243,11 +243,13 @@
     NSLog(@"INDEX NUMBER IS %lu",(unsigned long)objectIndex);
      */
     
-    
+    //Triggering the notification:
     if (self.notificationAccessGranted) {
         
+        //Creating a notification object:
         UNUserNotificationCenter *notifCenter = [UNUserNotificationCenter currentNotificationCenter];
         
+        //Creating a notification content object and setting the properties:
         UNMutableNotificationContent *notifContent = [[UNMutableNotificationContent alloc] init];
         
         notifContent.title = @"You're There!";
@@ -255,6 +257,7 @@
         notifContent.body = @"Open app to view details";
         notifContent.sound = [UNNotificationSound defaultSound];
         
+        //Requesting the notification:
         UNNotificationRequest *notifRequest = [UNNotificationRequest requestWithIdentifier:@"ArrivalNotification" content:notifContent trigger:nil];
         
         [notifCenter addNotificationRequest:notifRequest withCompletionHandler:nil];

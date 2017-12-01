@@ -294,14 +294,59 @@
                     <view key="view" contentMode="scaleToFill" id="Kyf-Mh-KcL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yvY-F2-lt9">
+                                <rect key="frame" x="16" y="173" width="343" height="429"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Edp-jJ-sP5"/>
+                                    <constraint firstAttribute="height" constant="429" id="dYU-k8-NZC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-VX-8K0">
+                                <rect key="frame" x="16" y="39" width="281" height="52"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <color key="textColor" white="0.34648980034722221" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rah-V3-39I">
+                                <rect key="frame" x="16" y="259" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="FKX-PA-aEd"/>
+                                    <constraint firstAttribute="width" constant="343" id="mYs-sU-SvW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OKv-0z-yVE">
+                                <rect key="frame" x="16" y="382" width="343" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="408-hn-31Z"/>
+                                    <constraint firstAttribute="width" constant="343" id="wlx-Lz-24f"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yvY-F2-lt9" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="33F-So-xwg"/>
+                            <constraint firstItem="eFC-VX-8K0" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="7QI-CO-IEr"/>
+                            <constraint firstItem="eFC-VX-8K0" firstAttribute="top" secondItem="664-rJ-9ki" secondAttribute="top" constant="19" id="8r0-sl-T7j"/>
+                            <constraint firstItem="664-rJ-9ki" firstAttribute="bottom" secondItem="yvY-F2-lt9" secondAttribute="bottom" constant="16" id="BxC-81-NVo"/>
+                            <constraint firstItem="OKv-0z-yVE" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="CVd-kN-1bC"/>
+                            <constraint firstItem="rah-V3-39I" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="WNc-AW-BRO"/>
+                            <constraint firstItem="664-rJ-9ki" firstAttribute="bottom" secondItem="OKv-0z-yVE" secondAttribute="bottom" constant="16" id="jek-eV-icC"/>
+                            <constraint firstItem="664-rJ-9ki" firstAttribute="bottom" secondItem="rah-V3-39I" secondAttribute="bottom" constant="16" id="n0Q-VR-VLZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="664-rJ-9ki"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="View Reminder" selectedImage="first" id="MXQ-Zk-hK8"/>
+                    <connections>
+                        <outlet property="enteredReminderLabel" destination="eFC-VX-8K0" id="H8r-BS-VgO"/>
+                        <outlet property="landscapeEnteredImage" destination="OKv-0z-yVE" id="Dka-dG-PEJ"/>
+                        <outlet property="portraitEnteredImage" destination="yvY-F2-lt9" id="G3S-oX-g5B"/>
+                        <outlet property="squareEnteredImage" destination="rah-V3-39I" id="Ssl-GP-1Co"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBw-Vp-HTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="802"/>
+            <point key="canvasLocation" x="757.60000000000002" y="801.94902548725645"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

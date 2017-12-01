@@ -10,4 +10,13 @@
 
 @interface ViewReminderViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *enteredReminderLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *portraitEnteredImage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *squareEnteredImage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *landscapeEnteredImage;
+
+
 @end
