@@ -18,6 +18,12 @@
     
     [super viewDidLoad];
     
+    // Clear the fields for next reminder:
+    self.reminderText.text = nil;
+    self.reminderLabelText.text = nil;
+    self.squarePreviewImage.image = nil;
+    self.portraitPreviewImage.image = nil;
+    self.landscapePreviewImage.image = nil;
     
     self.reminderArray = [NSMutableArray array];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -171,9 +177,9 @@
     //CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"Reminder %lu", (unsigned long)_reminderArray.count]];
     
     //Random identifier:
-    //newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
+    newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
     
-    newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"reminder%lu", self.reminderArray.count]];
+    //newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"reminder%lu", self.reminderArray.count]];
     
     
     [self.locationManager startMonitoringForRegion:newReminder.region];
@@ -189,6 +195,9 @@
     // Saving the array to the user defaults:
     [defaults setObject:self.reminderArray forKey:@"kReminderArray"];
 
+    
+    //Refresh ViewController
+    [self viewDidLoad];
 
 }
 
