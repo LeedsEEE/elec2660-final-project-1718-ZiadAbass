@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *reminderText;
 @property (strong, nonatomic) NSData *reminderPhotoData;
 
+/*
 @property double *reminderLongitude;
 @property double *reminderLatitude;
 
@@ -22,4 +23,8 @@
 
 @property (nonatomic) CLLocationDegrees *reminderLocation;
 
+ */
+
+@property NSString *reminderPlacemarkName;
+ 
 @end

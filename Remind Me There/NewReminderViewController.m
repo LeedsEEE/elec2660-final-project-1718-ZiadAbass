@@ -42,6 +42,9 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
+    //NSLog(@"%@",[self.reminderArray objectAtIndex:0]);
+    NSLog(@"FROM DEFAULTS%@",[defaults objectForKey:@"kReminderArray"]);
+    
 }
 
 
@@ -152,16 +155,17 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    CLLocationDegrees longitude = [defaults doubleForKey:@"QLongitude"];
-    CLLocationDegrees latitude = [defaults doubleForKey:@"QLatitude"];
+    ////CLLocationDegrees longitude = [defaults doubleForKey:@"QLongitude"];
+    ////CLLocationDegrees latitude = [defaults doubleForKey:@"QLatitude"];
     
 
     // Setting the properties of the reminder:
     newReminder.reminderLabel = self.reminderLabelText.text;
     newReminder.reminderText = self.reminderText.text;
     newReminder.reminderPhotoData = imagePngData;
-    newReminder.reminderLongitude = &(longitude);
-    newReminder.reminderLatitude = &(latitude);
+    ////newReminder.reminderLongitude = &(longitude);
+    ////newReminder.reminderLatitude = &(latitude);
+    newReminder.reminderPlacemarkName = [defaults objectForKey:@"kPlacemarkName"];
     
     // Printing the coordinates of the chosen location:
     NSLog(@"LONG OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLongitude"] );
@@ -169,25 +173,33 @@
     
     // Defining the centre point of the reminder's region:
     CLLocationCoordinate2D centre;
-    centre.latitude = *(newReminder.reminderLatitude);
-    centre.longitude = *(newReminder.reminderLongitude);
+    ////centre.latitude = *(newReminder.reminderLatitude);
+    ////centre.longitude = *(newReminder.reminderLongitude);
+    
+    centre.latitude = [defaults doubleForKey:@"QLatitude"];
+    centre.longitude = [defaults doubleForKey:@"QLongitude"];
     
     
     // Defining the reminder's region based on the user's choice:
     //CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"Reminder %lu", (unsigned long)_reminderArray.count]];
     
     //Random identifier:
-    newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
+    //newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
     
-    //newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"reminder%lu", self.reminderArray.count]];
+    ////newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"%@",newReminder.reminderLabel]];
     
-    
-    [self.locationManager startMonitoringForRegion:newReminder.region];
-    
-    newReminder.region.notifyOnEntry = YES;
-    newReminder.region.notifyOnExit = NO;
+    self.tempRegion = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"%@",newReminder.reminderLabel]];
     
     
+    ////[self.locationManager startMonitoringForRegion:newReminder.region];
+    
+    [self.locationManager startMonitoringForRegion:self.tempRegion];
+    
+    ////newReminder.region.notifyOnEntry = YES;
+    ////newReminder.region.notifyOnExit = NO;
+    
+    self.tempRegion.notifyOnEntry = YES;
+    self.tempRegion.notifyOnExit = NO;
     
     // Saving the data into the array:
     [self.reminderArray addObject:newReminder];
@@ -208,9 +220,9 @@
     
        //if([[region identifier] isEqualToString:@"ReminderOne"]){
            
-           NSLog(@"Entered region");
+        NSLog(@"Entered region");
     
-       //}
+        NSLog(@"Entered %@", region.identifier);
 }
 
 

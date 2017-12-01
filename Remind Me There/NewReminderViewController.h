@@ -53,5 +53,13 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 
+@property double *tempReminderLongitude;
+@property double *tempReminderLatitude;
+
+@property CLCircularRegion *tempRegion;
+
+@property (nonatomic) CLLocationDegrees *tempReminderLocation;
+
+
 @end
 

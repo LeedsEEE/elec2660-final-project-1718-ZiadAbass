@@ -95,6 +95,8 @@
     MKCoordinateRegion region = MKCoordinateRegionMake(placemark.coordinate, MKCoordinateSpanMake(0.04, 0.04));
     [self.userMap setRegion:region animated:YES];
     
+    [defaults setObject:placemark.name forKey:@"kPlacemarkName"];
+    
     // Place the annotation on the map:
     [self.userMap addAnnotation:annotation];
     [defaults synchronize];
