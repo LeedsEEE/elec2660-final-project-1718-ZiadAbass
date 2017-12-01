@@ -45,6 +45,15 @@
     //NSLog(@"%@",[self.reminderArray objectAtIndex:0]);
     NSLog(@"FROM DEFAULTS%@",[defaults objectForKey:@"kReminderArray"]);
     
+    self.notificationAccessGranted = NO;
+    
+    UNUserNotificationCenter *notifCenter = [UNUserNotificationCenter currentNotificationCenter];
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
+    [notifCenter requestAuthorizationWithOptions:options completionHandler:^(BOOL allowed, NSError * _Nullable error) {
+        
+        self.notificationAccessGranted = allowed;
+    }];
+    
 }
 
 
@@ -223,6 +232,36 @@
         NSLog(@"Entered region");
     
         NSLog(@"Entered %@", region.identifier);
+
+    /*
+    NSString *tempIdentifier = region.identifier;
+    
+    NSUInteger objectIndex = [self.reminderArray                             indexOfObjectPassingTest:^BOOL(NSString* obj, NSUInteger idx, BOOL             *stop) {
+        return (*stop = ([obj isEqualToString:tempIdentifier]));
+    }];
+    
+    NSLog(@"INDEX NUMBER IS %lu",(unsigned long)objectIndex);
+     */
+    
+    
+    if (self.notificationAccessGranted) {
+        
+        UNUserNotificationCenter *notifCenter = [UNUserNotificationCenter currentNotificationCenter];
+        
+        UNMutableNotificationContent *notifContent = [[UNMutableNotificationContent alloc] init];
+        
+        notifContent.title = @"You're There!";
+        notifContent.subtitle = [NSString stringWithFormat:@"%@",region.identifier];
+        notifContent.body = @"Open app to view details";
+        notifContent.sound = [UNNotificationSound defaultSound];
+        
+        UNNotificationRequest *notifRequest = [UNNotificationRequest requestWithIdentifier:@"ArrivalNotification" content:notifContent trigger:nil];
+        
+        [notifCenter addNotificationRequest:notifRequest withCompletionHandler:nil];
+        
+    }
+    
+    
 }
 
 

@@ -18,6 +18,7 @@
 		9906ED801FC0A11700821624 /* Remind_Me_ThereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED7F1FC0A11700821624 /* Remind_Me_ThereTests.m */; };
 		9906ED8B1FC0A11700821624 /* Remind_Me_ThereUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED8A1FC0A11700821624 /* Remind_Me_ThereUITests.m */; };
 		9906ED9A1FC0E61800821624 /* ViewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9906ED991FC0E61800821624 /* ViewReminderViewController.m */; };
+		9924EFA11FD2098B00D2ABA4 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FBDEC11FCD9FB6003E54E4 /* UserNotifications.framework */; };
 		9927AD241FC76555002764BE /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9927AD231FC7654C002764BE /* Contacts.framework */; };
 		999E60E21FC3B4C300167632 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E60E11FC3B4C300167632 /* MapViewController.m */; };
 		999E60E51FC3B7B500167632 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E41FC3B7AB00167632 /* CoreLocation.framework */; };
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9924EFA11FD2098B00D2ABA4 /* UserNotifications.framework in Frameworks */,
 				9927AD241FC76555002764BE /* Contacts.framework in Frameworks */,
 				999E60E71FC3B7C300167632 /* MapKit.framework in Frameworks */,
 				999E60E51FC3B7B500167632 /* CoreLocation.framework in Frameworks */,

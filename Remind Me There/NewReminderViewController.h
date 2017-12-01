@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 #import "Reminder.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 
@@ -59,6 +60,8 @@
 @property CLCircularRegion *tempRegion;
 
 @property (nonatomic) CLLocationDegrees *tempReminderLocation;
+
+@property bool notificationAccessGranted;
 
 
 @end
