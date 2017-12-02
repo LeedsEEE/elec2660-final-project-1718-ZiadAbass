@@ -42,10 +42,21 @@
 - (IBAction)chooseLocationButton:(id)sender;
 
 - (IBAction)saveReminderButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *saveReminderButtonOutlet;
+
+
+- (IBAction)reviewButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *reviewButtonOutlet;
+
+
+- (IBAction)cancelButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButtonOutlet;
 
 
 - (IBAction)pressedBackground:(id)sender;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *chosenLocationLabel;
 
 
 @property NSMutableArray *reminderArray;

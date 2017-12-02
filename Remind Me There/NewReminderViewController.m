@@ -18,6 +18,17 @@
     
     [super viewDidLoad];
     
+    // Since 'Text' is the default selection of segmented control
+    self.reminderText.hidden = NO;
+    self.takePhotoButtonOutlet.hidden = YES;
+    self.chooseExistingButtonOutlet.hidden = YES;
+    
+    // Reseting the buttons:
+    self.saveReminderButtonOutlet.hidden = YES;
+    self.chosenLocationLabel.hidden = YES;
+    self.cancelButtonOutlet.hidden = YES;
+    self.reviewButtonOutlet.hidden = NO;
+    
     // Clear the fields for next reminder:
     self.reminderText.text = nil;
     self.reminderLabelText.text = nil;
@@ -43,7 +54,7 @@
     self.locationManager.delegate = self;
     
     //NSLog(@"%@",[self.reminderArray objectAtIndex:0]);
-    NSLog(@"FROM DEFAULTS%@",[defaults objectForKey:@"kReminderArray"]);
+    //NSLog(@"FROM DEFAULTS%@",[defaults objectForKey:@"kReminderArray"]);
     
     self.notificationAccessGranted = NO;
     
@@ -108,6 +119,7 @@
     
     // PreviewImage UIIMage is set to display the image the user picks or captures. Since the chosen image can be portrait, landscape or squared, 3 different UIImages are available to accomodate whichever orientation the chosen photo is:
     
+    /*
     if (self.chosenImage.size.height > self.chosenImage.size.width) {       // if portrait
         
         self.portraitPreviewImage.hidden = NO;
@@ -131,6 +143,8 @@
         
     }
     
+     */
+     
     //The imagePickerController is dismissed after selecting a photo:
     [self dismissViewControllerAnimated:YES completion:NULL];
     
@@ -151,6 +165,60 @@
 
 - (IBAction)chooseLocationButton:(id)sender {
 }
+
+
+// The user is given the chance to review the reminder before it's saved:
+- (IBAction)reviewButton:(UIButton *)sender {
+    
+    self.reviewButtonOutlet.hidden = YES;
+    self.cancelButtonOutlet.hidden = NO;
+    
+    
+    //Previw the image in a suitable orientation:
+    if (self.chosenImage.size.height > self.chosenImage.size.width) {       // if portrait
+        
+        self.portraitPreviewImage.hidden = NO;
+        [self.portraitPreviewImage setImage:self.chosenImage];
+        self.landscapePreviewImage.hidden = YES;
+        self.squarePreviewImage.hidden = YES;
+        
+    } else if (self.chosenImage.size.height < self.chosenImage.size.width) {    //if landscape
+        
+        self.landscapePreviewImage.hidden = NO;
+        [self.landscapePreviewImage setImage:self.chosenImage];
+        self.portraitPreviewImage.hidden = YES;
+        self.squarePreviewImage.hidden = YES;
+        
+    } else {                                                              //if squared
+        
+        self.squarePreviewImage.hidden = NO;
+        [self.squarePreviewImage setImage:self.chosenImage];
+        self.portraitPreviewImage.hidden = YES;
+        self.landscapePreviewImage.hidden = YES;
+    
+    }
+
+    //Previewing the saved reminder location:
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.chosenLocationLabel.hidden = NO;
+    self.chosenLocationLabel.text = [NSString stringWithFormat:@"Reminded set for %@",[defaults objectForKey:@"kPlacemarkName"]];
+    
+    //The user can only save after reviewing:
+    self.saveReminderButtonOutlet.hidden = NO;
+}
+
+
+
+// Start over if cancel button is pressed
+- (IBAction)cancelButton:(UIButton *)sender {
+    
+    //Refresh ViewController
+    [self viewDidLoad];
+    
+}
+
+
+
 
 - (IBAction)saveReminderButton:(id)sender {
     

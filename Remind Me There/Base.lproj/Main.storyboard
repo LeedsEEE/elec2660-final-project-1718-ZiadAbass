@@ -111,8 +111,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw8-NB-mJs">
-                                <rect key="frame" x="305" y="550" width="45" height="38"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <rect key="frame" x="300" y="547" width="50" height="41"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-t5-v1d">
-                                <rect key="frame" x="40" y="469" width="200" height="134"/>
+                                <rect key="frame" x="40" y="464" width="200" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2NS-e2-faP"/>
                                     <constraint firstAttribute="height" constant="134" id="95o-vF-Lwa"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-6z-xTn">
-                                <rect key="frame" x="112" y="404" width="151" height="38"/>
+                                <rect key="frame" x="112" y="401" width="151" height="38"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <state key="normal" title="Choose Location">
                                     <color key="titleColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,30 +148,58 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="chr-H4-UOD">
-                                <rect key="frame" x="40" y="450" width="113" height="153"/>
+                                <rect key="frame" x="40" y="445" width="113" height="153"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="153" id="YtJ-Ir-uhc"/>
                                     <constraint firstAttribute="width" constant="113" id="zmK-hS-PmC"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-eI-0IS">
-                                <rect key="frame" x="40" y="457" width="146" height="146"/>
+                                <rect key="frame" x="40" y="452" width="146" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="Gyg-IJ-EVr"/>
                                     <constraint firstAttribute="width" constant="146" id="Iu5-cK-HY5"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chosen Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ub-EO-USF">
+                                <rect key="frame" x="40" y="595.5" width="127" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.4519316803682879" green="0.4519316803682879" blue="0.4519316803682879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twY-x7-Gxe">
+                                <rect key="frame" x="279" y="511" width="70" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.4519316803682879" green="0.4519316803682879" blue="0.4519316803682879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="kM5-ro-4wm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-aO-HCd">
+                                <rect key="frame" x="279" y="547" width="71" height="41"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <state key="normal" title="Review">
+                                    <color key="titleColor" red="0.4519316803682879" green="0.4519316803682879" blue="0.4519316803682879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reviewButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="xpv-LO-NbO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="hGb-40-4O7" secondAttribute="trailing" constant="50" id="0Bl-CM-qMU"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="jw8-NB-mJs" secondAttribute="trailing" constant="25" id="1B5-0p-bu1"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="b5U-aO-HCd" secondAttribute="bottom" constant="30" id="1Qi-XP-18q"/>
                             <constraint firstItem="QSL-af-o7i" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="1sP-Cq-r0e"/>
                             <constraint firstItem="e9R-eI-0IS" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="20j-YI-b9x"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="TJa-hJ-7fm" secondAttribute="trailing" constant="120" id="20o-rJ-2mS"/>
                             <constraint firstItem="uJX-t5-v1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="23R-7M-mzM"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="chr-H4-UOD" secondAttribute="bottom" constant="15" id="3fg-B9-wf5"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="e9R-eI-0IS" secondAttribute="bottom" constant="15" id="8qP-p5-3Ta"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="chr-H4-UOD" secondAttribute="bottom" constant="20" id="3fg-B9-wf5"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="e9R-eI-0IS" secondAttribute="bottom" constant="20" id="8qP-p5-3Ta"/>
                             <constraint firstItem="qZY-6z-xTn" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="BvA-o6-wpJ"/>
                             <constraint firstItem="chr-H4-UOD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="DGB-9e-HWE"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="19" id="Fq5-51-DNP"/>
@@ -179,16 +207,19 @@
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="top" secondItem="TJa-hJ-7fm" secondAttribute="bottom" constant="20" id="RXG-XF-BMi"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="TCp-Di-XKL"/>
                             <constraint firstItem="TJa-hJ-7fm" firstAttribute="top" secondItem="Kxj-SY-8oV" secondAttribute="bottom" constant="25" id="UZe-eP-o9I"/>
-                            <constraint firstItem="qZY-6z-xTn" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="18" id="W3S-2Z-h5C"/>
+                            <constraint firstItem="qZY-6z-xTn" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="15" id="W3S-2Z-h5C"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="QSL-af-o7i" secondAttribute="trailing" constant="40" id="XqI-0f-THs"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="YQh-SI-HPR"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="e3H-tA-y2f"/>
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="etD-1Y-eai"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="jw8-NB-mJs" secondAttribute="bottom" constant="30" id="fVr-vg-E9i"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="b5U-aO-HCd" secondAttribute="trailing" constant="25" id="frk-aQ-Vpv"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="-38" id="iCE-P8-hre"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="9Xf-Zc-FCy" secondAttribute="trailing" constant="40" id="jh4-WQ-FKA"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="5ub-EO-USF" secondAttribute="bottom" id="sug-DG-vjP"/>
                             <constraint firstItem="hGb-40-4O7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="w4l-y4-sSV"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="uJX-t5-v1d" secondAttribute="bottom" constant="15" id="yIc-Ab-gcn"/>
+                            <constraint firstItem="5ub-EO-USF" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="xLU-Bl-DpU"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="uJX-t5-v1d" secondAttribute="bottom" constant="20" id="yIc-Ab-gcn"/>
                             <constraint firstItem="TJa-hJ-7fm" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="ybA-R6-Bmf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -199,11 +230,15 @@
                     <tabBarItem key="tabBarItem" title="New Reminder" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="wuE-UU-StJ"/>
                     <connections>
+                        <outlet property="cancelButtonOutlet" destination="twY-x7-Gxe" id="jYF-TZ-U1B"/>
                         <outlet property="chooseExistingButtonOutlet" destination="QSL-af-o7i" id="9ra-sx-Xw9"/>
+                        <outlet property="chosenLocationLabel" destination="5ub-EO-USF" id="d8w-O4-e69"/>
                         <outlet property="landscapePreviewImage" destination="uJX-t5-v1d" id="vEI-3p-bNM"/>
                         <outlet property="portraitPreviewImage" destination="chr-H4-UOD" id="aod-Qc-XTb"/>
                         <outlet property="reminderLabelText" destination="TJa-hJ-7fm" id="7kv-L4-sEH"/>
                         <outlet property="reminderText" destination="hGb-40-4O7" id="zQy-iR-B2E"/>
+                        <outlet property="reviewButtonOutlet" destination="b5U-aO-HCd" id="g7k-CJ-5of"/>
+                        <outlet property="saveReminderButtonOutlet" destination="jw8-NB-mJs" id="QxC-gf-qE7"/>
                         <outlet property="squarePreviewImage" destination="e9R-eI-0IS" id="Vgl-br-nrF"/>
                         <outlet property="takePhotoButtonOutlet" destination="8E0-L2-edD" id="TyE-AH-OmA"/>
                     </connections>
@@ -241,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkc-Pv-uCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="2287"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="2286.2068965517242"/>
         </scene>
         <!--Search Location Table View-->
         <scene sceneID="1WP-0w-xEp">
