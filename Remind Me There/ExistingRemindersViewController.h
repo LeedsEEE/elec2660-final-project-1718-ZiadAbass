@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExistingRemindersViewController : UIViewController
+
+@interface ExistingRemindersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *currentReminderImage;
 
+
+@property (weak, nonatomic) IBOutlet UITableView *existingRemindersTable;
+
+
+@property NSMutableArray *existingReminderLabels;
 
 @end
 
