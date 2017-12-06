@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewReminderViewController.h"
 
 @interface ViewReminderViewController : UIViewController
+
+
+@property NewReminderViewController *tempReminderObject;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *enteredReminderLabel;
 

@@ -61,6 +61,9 @@
 
 @property NSMutableArray *reminderArray;
 
+@property NSMutableArray *reminderLabelArray;
+@property NSMutableArray *reminderPhotoDataArray;
+@property NSMutableArray *reminderTextArray;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
@@ -73,6 +76,13 @@
 @property (nonatomic) CLLocationDegrees *tempReminderLocation;
 
 @property bool notificationAccessGranted;
+
+
+@property NSInteger numberOfReminders;
+
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *currentReminderImage;
 
 
 @end

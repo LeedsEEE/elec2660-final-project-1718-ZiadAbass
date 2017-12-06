@@ -10,5 +10,9 @@
 
 @interface ExistingRemindersViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *currentReminderImage;
+
+
 @end
 

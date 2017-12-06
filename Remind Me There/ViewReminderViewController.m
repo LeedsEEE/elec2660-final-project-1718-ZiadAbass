@@ -21,7 +21,29 @@
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
     
+    
+    
+    
+    
 }
+
+
+
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //[UINavigationController viewWillAppear:animated];
+    NSLog(@"ViewReminderTab Opened");
+    
+    self.tempReminderObject = [[NewReminderViewController alloc] init];
+    
+    NSData *tempPhotoData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentImageData"];
+    self.landscapeEnteredImage.image = [UIImage imageWithData:tempPhotoData];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

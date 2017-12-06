@@ -21,10 +21,26 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y5B-f0-sBe">
+                                <rect key="frame" x="51" y="229.5" width="273" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="1R8-eR-Fqf"/>
+                                    <constraint firstAttribute="width" constant="273" id="pVf-w7-mEH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y5B-f0-sBe" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="3dq-bx-Ipg"/>
+                            <constraint firstItem="Y5B-f0-sBe" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="FcQ-2K-aMa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Existing Reminders" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="currentReminderImage" destination="Y5B-f0-sBe" id="w6p-if-lbF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,6 +204,9 @@
                                     <action selector="reviewButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="xpv-LO-NbO"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VpB-5G-aVs">
+                                <rect key="frame" x="274" y="148" width="61" height="42"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -200,14 +219,17 @@
                             <constraint firstItem="uJX-t5-v1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="23R-7M-mzM"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="chr-H4-UOD" secondAttribute="bottom" constant="20" id="3fg-B9-wf5"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="e9R-eI-0IS" secondAttribute="bottom" constant="20" id="8qP-p5-3Ta"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="VpB-5G-aVs" secondAttribute="bottom" constant="428" id="BJS-Bl-CA6"/>
                             <constraint firstItem="qZY-6z-xTn" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="BvA-o6-wpJ"/>
                             <constraint firstItem="chr-H4-UOD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="DGB-9e-HWE"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="VpB-5G-aVs" secondAttribute="trailing" constant="40" id="Ekq-sw-pCl"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="19" id="Fq5-51-DNP"/>
                             <constraint firstItem="hGb-40-4O7" firstAttribute="top" secondItem="9Xf-Zc-FCy" secondAttribute="bottom" constant="20" id="Jah-ct-3Ce"/>
                             <constraint firstItem="9Xf-Zc-FCy" firstAttribute="top" secondItem="TJa-hJ-7fm" secondAttribute="bottom" constant="20" id="RXG-XF-BMi"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="top" secondItem="hGb-40-4O7" secondAttribute="bottom" constant="30" id="TCp-Di-XKL"/>
                             <constraint firstItem="TJa-hJ-7fm" firstAttribute="top" secondItem="Kxj-SY-8oV" secondAttribute="bottom" constant="25" id="UZe-eP-o9I"/>
                             <constraint firstItem="qZY-6z-xTn" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="15" id="W3S-2Z-h5C"/>
+                            <constraint firstItem="VpB-5G-aVs" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="84" id="WYK-3X-SuJ"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="QSL-af-o7i" secondAttribute="trailing" constant="40" id="XqI-0f-THs"/>
                             <constraint firstItem="Kxj-SY-8oV" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="YQh-SI-HPR"/>
                             <constraint firstItem="8E0-L2-edD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="e3H-tA-y2f"/>
@@ -217,6 +239,7 @@
                             <constraint firstItem="8E0-L2-edD" firstAttribute="top" secondItem="QSL-af-o7i" secondAttribute="bottom" constant="-38" id="iCE-P8-hre"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="9Xf-Zc-FCy" secondAttribute="trailing" constant="40" id="jh4-WQ-FKA"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="5ub-EO-USF" secondAttribute="bottom" id="sug-DG-vjP"/>
+                            <constraint firstItem="VpB-5G-aVs" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="274" id="vdn-wr-e3G"/>
                             <constraint firstItem="hGb-40-4O7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="w4l-y4-sSV"/>
                             <constraint firstItem="5ub-EO-USF" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="40" id="xLU-Bl-DpU"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="uJX-t5-v1d" secondAttribute="bottom" constant="20" id="yIc-Ab-gcn"/>
@@ -233,6 +256,7 @@
                         <outlet property="cancelButtonOutlet" destination="twY-x7-Gxe" id="jYF-TZ-U1B"/>
                         <outlet property="chooseExistingButtonOutlet" destination="QSL-af-o7i" id="9ra-sx-Xw9"/>
                         <outlet property="chosenLocationLabel" destination="5ub-EO-USF" id="d8w-O4-e69"/>
+                        <outlet property="currentReminderImage" destination="VpB-5G-aVs" id="yWu-Z2-8Ak"/>
                         <outlet property="landscapePreviewImage" destination="uJX-t5-v1d" id="vEI-3p-bNM"/>
                         <outlet property="portraitPreviewImage" destination="chr-H4-UOD" id="aod-Qc-XTb"/>
                         <outlet property="reminderLabelText" destination="TJa-hJ-7fm" id="7kv-L4-sEH"/>
