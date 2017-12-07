@@ -442,6 +442,12 @@
     
     */
     
+    
+    ///[[ViewReminderViewController tabBarItem] setBadgeValue:@"1"];
+    
+    [[super.tabBarController.viewControllers objectAtIndex:2] tabBarItem].badgeValue = @"*";
+    
+    
     [self.locationManager stopMonitoringForRegion:region];
 
 

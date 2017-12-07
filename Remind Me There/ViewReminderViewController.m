@@ -25,12 +25,14 @@
     self.enteredReminderLabel.text = nil;
     //self.enteredReminderLabel.numberOfLines = 3;
     
+    
+    //Displaying the image in the correct orientation:
     self.landscapeEnteredImage.image = nil;
     self.portraitEnteredImage.image = nil;
     self.squareEnteredImage.image = nil;
     
     
-    self.tempReminderObject = [[NewReminderViewController alloc] init];
+    ///self.tempReminderObject = [[NewReminderViewController alloc] init];
     
     
     self.informationLabel.text = [NSString stringWithFormat:@"Your reminder details %@ will be available when you %@  arrive at a saved location...",@"\n",@"\n"];
@@ -55,6 +57,10 @@
     
     self.enteredReminderLabel.text = nil;
     //self.enteredReminderLabel.numberOfLines = 3;
+    
+    
+    //Removing the badge once this ViewController is opened:
+    [[super.tabBarController.viewControllers objectAtIndex:2] tabBarItem].badgeValue = nil;
     
     
     [self viewDidLoad];

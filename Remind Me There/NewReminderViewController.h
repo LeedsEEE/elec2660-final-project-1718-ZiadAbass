@@ -10,6 +10,7 @@
 #import "MapViewController.h"
 #import "Reminder.h"
 #import <UserNotifications/UserNotifications.h>
+#import "ViewReminderViewController.h"
 
 @interface NewReminderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 
