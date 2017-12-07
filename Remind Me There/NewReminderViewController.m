@@ -68,6 +68,9 @@
     self.reminderLabelArray = [NSMutableArray array];
     self.reminderTextArray = [NSMutableArray array];
     self.reminderPhotoDataArray = [NSMutableArray array];
+    
+    ///[self.reminderLabelArray addObject:@"First Object"];
+    ///[self.reminderPhotoDataArray addObject:@"First Object"];
      
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
@@ -396,9 +399,12 @@
     NSArray *tempArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderPhotoArray"];
     NSData *imageData = [tempArray objectAtIndex:objectIndex];
     [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:@"currentImageData"];
+    [[NSUserDefaults standardUserDefaults] setInteger:objectIndex forKey:@"currentIndex"];
+    
+    /*
     UIImage *currentImage = [UIImage imageWithData:imageData];
     self.currentReminderImage.image = currentImage;
-    
+    */
     
     
     
@@ -425,7 +431,19 @@
         
     }
     
+    /*
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    [self.reminderLabelArray removeObjectAtIndex:objectIndex];
+    [self.reminderPhotoDataArray removeObjectAtIndex:objectIndex];
+    
+    [defaults setObject:self.reminderLabelArray forKey:@"kReminderLabelArray"];
+    [defaults setObject:self.reminderPhotoDataArray forKey:@"kReminderPhotoArray"];
+    
+    */
+    
+    [self.locationManager stopMonitoringForRegion:region];
+
 
     
 }

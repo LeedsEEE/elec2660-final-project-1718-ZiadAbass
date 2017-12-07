@@ -22,7 +22,19 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
     
     
+    self.enteredReminderLabel.text = nil;
+    //self.enteredReminderLabel.numberOfLines = 3;
     
+    self.landscapeEnteredImage.image = nil;
+    self.portraitEnteredImage.image = nil;
+    self.squareEnteredImage.image = nil;
+    
+    
+    self.tempReminderObject = [[NewReminderViewController alloc] init];
+    
+    
+    self.informationLabel.text = [NSString stringWithFormat:@"Your reminder details %@ will be available when you %@  arrive at a saved location...",@"\n",@"\n"];
+    self.informationLabel.numberOfLines = 0;
     
     
 }
@@ -36,11 +48,93 @@
     //[UINavigationController viewWillAppear:animated];
     NSLog(@"ViewReminderTab Opened");
     
-    self.tempReminderObject = [[NewReminderViewController alloc] init];
+    
+    self.viewReminderButtonObject.hidden = NO;
+    self.informationLabel.hidden = NO;
+    
+    
+    self.enteredReminderLabel.text = nil;
+    //self.enteredReminderLabel.numberOfLines = 3;
+    
+    
+    [self viewDidLoad];
+
+    
+    /*
     
     NSData *tempPhotoData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentImageData"];
     self.landscapeEnteredImage.image = [UIImage imageWithData:tempPhotoData];
+    
+    
+    NSArray *labelsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderLabelArray"];
+    
+    NSInteger currentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentIndex"];
+    
+    self.enteredReminderLabel.text = [labelsArray objectAtIndex:currentIndex];
+    
+    
+    */
+     
+     
 }
+
+
+
+
+
+- (IBAction)viewReminderButton:(UIButton *)sender {
+    
+    
+    self.viewReminderButtonObject.hidden = YES;
+    self.informationLabel.hidden = YES;
+    
+    NSData *tempPhotoData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentImageData"];
+    
+    UIImage *currentImage = [UIImage imageWithData:tempPhotoData];
+    
+    
+    
+    
+    //Show the image in a suitable orientation:
+    if (currentImage.size.height > currentImage.size.width) {       // if portrait
+        
+        self.portraitEnteredImage.hidden = NO;
+        [self.portraitEnteredImage setImage:currentImage];
+        self.landscapeEnteredImage.hidden = YES;
+        self.squareEnteredImage.hidden = YES;
+        
+    } else if (currentImage.size.height < currentImage.size.width) {    //if landscape
+        
+        self.landscapeEnteredImage.hidden = NO;
+        [self.landscapeEnteredImage setImage:currentImage];
+        self.portraitEnteredImage.hidden = YES;
+        self.squareEnteredImage.hidden = YES;
+        
+    } else {                                                              //if squared
+        
+        self.squareEnteredImage.hidden = NO;
+        [self.squareEnteredImage setImage:currentImage];
+        self.portraitEnteredImage.hidden = YES;
+        self.landscapeEnteredImage.hidden = YES;
+        
+    }
+
+    
+    
+    
+    
+    
+    
+    NSArray *labelsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderLabelArray"];
+    
+    NSInteger currentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentIndex"];
+    
+    self.enteredReminderLabel.text = [labelsArray objectAtIndex:currentIndex];
+    
+    
+}
+
+
 
 
 

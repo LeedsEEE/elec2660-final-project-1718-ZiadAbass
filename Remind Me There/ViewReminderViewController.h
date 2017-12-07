@@ -24,4 +24,15 @@
 @property (weak, nonatomic) IBOutlet UIImageView *landscapeEnteredImage;
 
 
+@property NSArray *reminderLabelsArray;
+
+
+- (IBAction)viewReminderButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *viewReminderButtonObject;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *informationLabel;
+
+
+
 @end

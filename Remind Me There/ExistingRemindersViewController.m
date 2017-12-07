@@ -36,6 +36,8 @@
     self.existingReminderLabels = [defaults objectForKey:@"kReminderLabelArray"];
     
     NSLog(@"Existing Reminder Label Array is: %@", self.existingReminderLabels);
+    
+    [self.existingRemindersTable reloadData];
  
     
 }
@@ -47,11 +49,12 @@
 #pragma mark - TableView Data Source
 
 
-
+/*
+ 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     
-    return [NSString stringWithFormat:@"A7a Naik Eh ElNeela Dih"];
+    return [NSString stringWithFormat:@"Your existing reminders:"];
     
 }
 
@@ -61,6 +64,8 @@
     
     return 1;
 }
+ 
+ */
 
 
 
