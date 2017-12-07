@@ -106,6 +106,20 @@
 
 
 
+#pragma mark Map View Delegate Methods
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    
+    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1, 0.1));
+    
+    [self.userMap setRegion:region animated:YES];
+}
+
+
+
+
+
+
 /*
 #pragma mark - Navigation
 

@@ -82,9 +82,5 @@
 @property NSInteger numberOfReminders;
 
 
-
-@property (weak, nonatomic) IBOutlet UIImageView *currentReminderImage;
-
-
 @end
 

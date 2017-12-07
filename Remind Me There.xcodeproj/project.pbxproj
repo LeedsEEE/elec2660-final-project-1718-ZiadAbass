@@ -24,6 +24,7 @@
 		999E60E51FC3B7B500167632 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E41FC3B7AB00167632 /* CoreLocation.framework */; };
 		999E60E71FC3B7C300167632 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E61FC3B7BB00167632 /* MapKit.framework */; };
 		99BE41E81FC1E0F800D21A5F /* AbstractBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */; };
+		99C4D3FD1FD992A800AB0C0B /* LaunchcImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C4D3FC1FD992A700AB0C0B /* LaunchcImage.png */; };
 		99F68E151FC8D68500F1C15D /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F68E141FC8D68500F1C15D /* Reminder.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		999E60E41FC3B7AB00167632 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		999E60E61FC3B7BB00167632 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AbstractBackground.png; sourceTree = "<group>"; };
+		99C4D3FC1FD992A700AB0C0B /* LaunchcImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchcImage.png; sourceTree = "<group>"; };
 		99F68E131FC8D68500F1C15D /* Reminder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		99F68E141FC8D68500F1C15D /* Reminder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		99FBDEC11FCD9FB6003E54E4 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -147,6 +149,7 @@
 				9906ED981FC0E61800821624 /* ViewReminderViewController.h */,
 				9906ED991FC0E61800821624 /* ViewReminderViewController.m */,
 				9906ED6F1FC0A11700821624 /* Assets.xcassets */,
+				99C4D3FC1FD992A700AB0C0B /* LaunchcImage.png */,
 				9906ED711FC0A11700821624 /* LaunchScreen.storyboard */,
 				9906ED741FC0A11700821624 /* Info.plist */,
 				9906ED751FC0A11700821624 /* main.m */,
@@ -299,6 +302,7 @@
 				99BE41E81FC1E0F800D21A5F /* AbstractBackground.png in Resources */,
 				9906ED701FC0A11700821624 /* Assets.xcassets in Resources */,
 				9906ED6E1FC0A11700821624 /* Main.storyboard in Resources */,
+				99C4D3FD1FD992A800AB0C0B /* LaunchcImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

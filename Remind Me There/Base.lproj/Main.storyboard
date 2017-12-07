@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SaU-FZ-0RE">
-                                <rect key="frame" x="30" y="270" width="315" height="328"/>
+                                <rect key="frame" x="30" y="142" width="315" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" textLabel="Ru2-TF-DCD" style="IBUITableViewCellStyleDefault" id="Qys-pO-iBL">
@@ -49,22 +49,22 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="XyD-HY-0Bh"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Existing Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-CY-8Gs">
-                                <rect key="frame" x="30" y="223" width="324" height="39"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Saved Reminders" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-CY-8Gs">
+                                <rect key="frame" x="30" y="35" width="225" height="104"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                 <color key="textColor" white="0.34648980029999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SaU-FZ-0RE" firstAttribute="top" secondItem="XEv-CY-8Gs" secondAttribute="bottom" constant="8" id="5b3-EW-uie"/>
-                            <constraint firstItem="SaU-FZ-0RE" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="250" id="BfB-yG-xJN"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="SaU-FZ-0RE" secondAttribute="bottom" constant="15" id="Bxh-3u-o7U"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="XEv-CY-8Gs" secondAttribute="trailing" constant="120" id="CCo-yk-gla"/>
                             <constraint firstItem="XEv-CY-8Gs" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="30" id="DM1-Wi-rgh"/>
                             <constraint firstItem="SaU-FZ-0RE" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="30" id="Ly2-yB-Q6u"/>
+                            <constraint firstItem="SaU-FZ-0RE" firstAttribute="top" secondItem="XEv-CY-8Gs" secondAttribute="bottom" constant="3" id="UbG-3F-UMn"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="SaU-FZ-0RE" secondAttribute="trailing" constant="30" id="W4j-W0-2JV"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="SaU-FZ-0RE" secondAttribute="bottom" constant="20" id="ibT-8M-9aB"/>
-                            <constraint firstItem="SaU-FZ-0RE" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="uGc-x6-OcJ"/>
+                            <constraint firstItem="XEv-CY-8Gs" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="15" id="yrc-67-wlt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -272,7 +272,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                         <connections>
-                            <action selector="pressedBackground:" destination="8rJ-Kc-sve" eventType="valueChanged" id="396-rx-y6Y"/>
+                            <action selector="pressedBackground:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Oaj-AY-BNZ"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="New Reminder" image="second" id="cPa-gy-q4n"/>
@@ -409,7 +409,7 @@
                                 <rect key="frame" x="24" y="446" width="327" height="41"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <state key="normal" title="Press here to view your reminder">
-                                    <color key="titleColor" red="0.23038943527918787" green="0.23038943527918787" blue="0.23038943527918787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.29772763324873097" green="0.29772763324873097" blue="0.29772763324873097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="viewReminderButton:" destination="gOw-On-czN" eventType="touchUpInside" id="94l-aL-mar"/>
@@ -418,7 +418,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your reminder details will be available when you arrive at a saved location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63t-yC-FaZ">
                                 <rect key="frame" x="-187.5" y="267" width="750" height="29"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.35572652284263961" green="0.35572652284263961" blue="0.35572652284263961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -469,9 +469,9 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="Ga1-SO-JeM" kind="relationship" relationship="viewControllers" id="gnW-1c-LoX"/>
                         <segue destination="gOw-On-czN" kind="relationship" relationship="viewControllers" id="BCP-pk-aTI"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

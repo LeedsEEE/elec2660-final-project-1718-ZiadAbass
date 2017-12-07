@@ -60,7 +60,7 @@
     
     
     //Removing the badge once this ViewController is opened:
-    [[super.tabBarController.viewControllers objectAtIndex:2] tabBarItem].badgeValue = nil;
+    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
     
     
     [self viewDidLoad];

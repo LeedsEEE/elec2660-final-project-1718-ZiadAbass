@@ -445,7 +445,7 @@
     
     ///[[ViewReminderViewController tabBarItem] setBadgeValue:@"1"];
     
-    [[super.tabBarController.viewControllers objectAtIndex:2] tabBarItem].badgeValue = @"*";
+    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"*";
     
     
     [self.locationManager stopMonitoringForRegion:region];
@@ -474,23 +474,7 @@
 
 
 
-
-  //Pressing anywhere on the background dismisses the keyboard:
-- (IBAction)pressedBackground:(id)sender {
-    
-    if ([self.reminderLabelText isFirstResponder]) {
-        [self.reminderLabelText resignFirstResponder];
-        
-    }
-
-    if ([self.reminderText isFirstResponder]) {
-        [self.reminderText resignFirstResponder];
-    
-    }
-}
-
-
-
+#pragma mark Text Field Delegate Methods
 
   //Pressing 'return' key dismisses the keyboard:
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -501,6 +485,22 @@
     
 }
 
+
+
+//Pressing anywhere on the background dismisses the keyboard:
+- (IBAction)pressedBackground:(id)sender {
+    
+    if ([self.reminderLabelText isFirstResponder]) {
+        [self.reminderLabelText resignFirstResponder];
+        
+    }
+    
+    if ([self.reminderText isFirstResponder]) {
+        [self.reminderText resignFirstResponder];
+        
+    }
+    
+}
 
 
 
