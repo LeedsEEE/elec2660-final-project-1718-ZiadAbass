@@ -20,8 +20,6 @@
 
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
-    
-    
 }
 
 
@@ -30,47 +28,27 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.existingReminderLabels = [defaults objectForKey:@"kReminderLabelArray"];
     
-    NSLog(@"Existing Reminder Label Array is: %@", self.existingReminderLabels);
-    
     [self.existingRemindersTable reloadData];
- 
+
     
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 
 
 
-
-#pragma mark - TableView Data Source
-
-
-/*
- 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    
-    return [NSString stringWithFormat:@"Your existing reminders:"];
-    
-}
+#pragma mark - TableView Data Source Methods
 
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-}
- 
- */
-
-
-
-
-
+  //Setting the number of rows in the table:
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.existingReminderLabels.count;
@@ -80,9 +58,7 @@
 
 
 
-
-
-
+  //Filling up the table's cells:
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
     
@@ -99,18 +75,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end

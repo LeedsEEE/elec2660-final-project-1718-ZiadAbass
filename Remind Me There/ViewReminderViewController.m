@@ -48,7 +48,8 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //[UINavigationController viewWillAppear:animated];
-    NSLog(@"ViewReminderTab Opened");
+    
+    //NSLog(@"ViewReminderTab Opened");
     
     
     self.viewReminderButtonObject.hidden = NO;

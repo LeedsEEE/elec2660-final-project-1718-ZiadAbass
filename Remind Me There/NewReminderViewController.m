@@ -25,10 +25,15 @@
     self.cancelButtonOutlet.hidden = YES;
     self.reviewButtonOutlet.hidden = NO;
     
-    // Since 'Text' is the default selection of segmented control
+    // Since 'Text' is the default selection of segmented control:
     self.reminderText.hidden = NO;
     self.takePhotoButtonOutlet.hidden = YES;
     self.chooseExistingButtonOutlet.hidden = YES;
+    
+    //Remove previously previewed image:
+    self.squarePreviewImage.image = nil;
+    self.portraitPreviewImage.image = nil;
+    self.landscapePreviewImage.image = nil;
     
     /*
     
@@ -65,6 +70,7 @@
     */
     
     
+    //Initialising the arrays:
     self.reminderLabelArray = [NSMutableArray array];
     self.reminderTextArray = [NSMutableArray array];
     self.reminderPhotoDataArray = [NSMutableArray array];
@@ -79,6 +85,7 @@
     self.pickerForTakePhoto = [[UIImagePickerController alloc] init];
     self.pickerForChooseExisting = [[UIImagePickerController alloc] init];
     
+    //Setting this view controller as the delegate for the pickers:
     self.pickerForTakePhoto.delegate = self;
     self.pickerForChooseExisting.delegate = self;
     
@@ -97,11 +104,7 @@
         self.notificationAccessGranted = allowed;
     }];
     
-    /*
-    self.numberOfReminders = self.reminderLabelArray.count;
-    NSLog(@"Number of elements is %lu",(unsigned long)self.numberOfReminders);
-    NSLog(@"Array contents: %@",self.reminderLabelArray);
-    */
+    
 }
 
 
@@ -150,37 +153,13 @@
 
 }
 
+
+ //Saving the selected image:
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
     self.chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    // PreviewImage UIIMage is set to display the image the user picks or captures. Since the chosen image can be portrait, landscape or squared, 3 different UIImages are available to accomodate whichever orientation the chosen photo is:
-    
-    /*
-    if (self.chosenImage.size.height > self.chosenImage.size.width) {       // if portrait
-        
-        self.portraitPreviewImage.hidden = NO;
-        [self.portraitPreviewImage setImage:self.chosenImage];
-        self.landscapePreviewImage.hidden = YES;
-        self.squarePreviewImage.hidden = YES;
-        
-    } else if (self.chosenImage.size.height < self.chosenImage.size.width) {    //if landscape
-        
-        self.landscapePreviewImage.hidden = NO;
-        [self.landscapePreviewImage setImage:self.chosenImage];
-        self.portraitPreviewImage.hidden = YES;
-        self.squarePreviewImage.hidden = YES;
-        
-    } else {                                                              //if squared
-        
-        self.squarePreviewImage.hidden = NO;
-        [self.squarePreviewImage setImage:self.chosenImage];
-        self.portraitPreviewImage.hidden = YES;
-        self.landscapePreviewImage.hidden = YES;
-        
-    }
-    
-     */
+    NSLog(@"Image chosen");
      
     //The imagePickerController is dismissed after selecting a photo:
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -193,15 +172,17 @@
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+    NSLog(@"Cancelled image choosing");
     
 }
 
 
 
 
-
+ // Pressing this button opens up the map for the user to select a location:
 - (IBAction)chooseLocationButton:(id)sender {
 }
+
 
 
 // The user is given the chance to review the reminder before it's saved:
@@ -261,6 +242,8 @@
     
     [self.locationManager requestAlwaysAuthorization];
     
+    NSLog(@"Saving Reminder...");
+    
     // Allocaing memory and initialising:
     Reminder *newReminder = [[Reminder alloc] init];
     
@@ -299,8 +282,8 @@
     
     
     // Printing the coordinates of the chosen location:
-    NSLog(@"LONG OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLongitude"] );
-    NSLog(@"LAT OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLatitude"] );
+    NSLog(@"LONGITUDE OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLongitude"] );
+    NSLog(@"LATITUDE OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLatitude"] );
     
     
     // Defining the centre point of the reminder's region:
@@ -346,7 +329,7 @@
 
     
     self.numberOfReminders = self.reminderLabelArray.count;
-    NSLog(@"Number of elements is %lu",(unsigned long)self.numberOfReminders);
+    NSLog(@"Number of reminders is %lu",(unsigned long)self.numberOfReminders);
     NSLog(@"Array contents: %@",self.reminderLabelArray);
      
      
@@ -373,14 +356,14 @@
 
 
 
-
+  //Defining what happens when the user enters a saved region:
 - (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region{
     
     
        //if([[region identifier] isEqualToString:@"ReminderOne"]){
            
-        NSLog(@"Entered region");
+        //NSLog(@"Entered region");
     
         NSLog(@"Entered %@", region.identifier);
 
@@ -392,7 +375,7 @@
         return (*stop = ([obj isEqualToString:tempIdentifier]));
     }];
     
-    NSLog(@"INDEX NUMBER IS %lu",(unsigned long)objectIndex);
+    NSLog(@"Index number of reminder is %lu",(unsigned long)objectIndex);
     
     
     
@@ -443,9 +426,7 @@
     */
     
     
-    ///[[ViewReminderViewController tabBarItem] setBadgeValue:@"1"];
-    
-    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"*";
+    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"1";
     
     
     [self.locationManager stopMonitoringForRegion:region];
@@ -456,6 +437,8 @@
 
 
 
+/*
+
 - (void)locationManager:(CLLocationManager *)manager
           didExitRegion:(CLRegion *)region{
 
@@ -463,6 +446,9 @@
     
     
 }
+ 
+ */
+
 
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(nonnull NSError *)error {
