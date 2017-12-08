@@ -101,11 +101,14 @@
         self.landscapeEnteredImage.hidden = YES;
         self.squareEnteredImage.hidden = YES;
         
+        self.reminderTextLabel.hidden = NO;
+        
     } else {
         
         
         UIImage *currentImage = [UIImage imageWithData:tempPhotoData];
-        
+        self.reminderTextLabel.hidden = YES;
+
         
         //Show the image in a suitable orientation:
         if (currentImage.size.height > currentImage.size.width) {       // if portrait

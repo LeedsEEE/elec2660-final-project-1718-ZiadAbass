@@ -226,8 +226,6 @@
     
     [self.reminderLabelArray addObject:self.reminderLabelText.text];
     
-    [self.reminderTextArray addObject:self.reminderText.text];
-    
     
     //If the reminder is only text (no image chosen)
     if (self.chosenImage == nil) {
@@ -244,7 +242,7 @@
     
     
     //If a photo is chosen (no text(
-    if (self.reminderText == nil) {
+    if (self.reminderText == NULL) {
         
         [self.reminderTextArray addObject:@"No Text"];
         
@@ -328,6 +326,9 @@
     
     NSString *tempIdentifier = region.identifier;
     
+    
+    //Since the identifier given to each region is the reminder's label, the identifier of the region entered is used to find the index number of the label containing the same string
+
     NSUInteger objectIndex = [self.reminderLabelArray indexOfObjectPassingTest:^BOOL(NSString* obj, NSUInteger idx, BOOL *stop)
     {
         return (*stop = ([obj isEqualToString:tempIdentifier]));
@@ -342,6 +343,8 @@
 
     [[NSUserDefaults standardUserDefaults] setInteger:objectIndex forKey:@"currentIndex"];
     
+    
+    //If statement to know from now if the user had selected an image for the reminder or not.
     if([imageData  isEqual: @"No Photo"]) {
         
         [[NSUserDefaults standardUserDefaults] setObject:@"No Photo" forKey:@"currentImageData"];
@@ -377,13 +380,12 @@
         
     }
     
-    
+    //Add a badge onto the 'ViewReminder' VC to indicate that a region has been entered
     [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"1";
     
     
+    //Stop looking for the region which the user enters:
     [self.locationManager stopMonitoringForRegion:region];
-
-
     
 }
 
