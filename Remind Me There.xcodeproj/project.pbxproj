@@ -21,6 +21,7 @@
 		9924EFA11FD2098B00D2ABA4 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FBDEC11FCD9FB6003E54E4 /* UserNotifications.framework */; };
 		9926FAD61FDA5F1700AEA422 /* Text Icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9926FAD51FDA5F1600AEA422 /* Text Icon1.png */; };
 		9927AD241FC76555002764BE /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9927AD231FC7654C002764BE /* Contacts.framework */; };
+		998666901FDA94AC00E3D8B3 /* LaunchingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9986668F1FDA94AC00E3D8B3 /* LaunchingImage.png */; };
 		999E60E21FC3B4C300167632 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E60E11FC3B4C300167632 /* MapViewController.m */; };
 		999E60E51FC3B7B500167632 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E41FC3B7AB00167632 /* CoreLocation.framework */; };
 		999E60E71FC3B7C300167632 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E60E61FC3B7BB00167632 /* MapKit.framework */; };
@@ -70,6 +71,7 @@
 		9906ED991FC0E61800821624 /* ViewReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewReminderViewController.m; sourceTree = "<group>"; };
 		9926FAD51FDA5F1600AEA422 /* Text Icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Text Icon1.png"; sourceTree = "<group>"; };
 		9927AD231FC7654C002764BE /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		9986668F1FDA94AC00E3D8B3 /* LaunchingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchingImage.png; sourceTree = "<group>"; };
 		999E60E01FC3B4C300167632 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		999E60E11FC3B4C300167632 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		999E60E41FC3B7AB00167632 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -151,6 +153,7 @@
 				9906ED741FC0A11700821624 /* Info.plist */,
 				9906ED751FC0A11700821624 /* main.m */,
 				9926FAD51FDA5F1600AEA422 /* Text Icon1.png */,
+				9986668F1FDA94AC00E3D8B3 /* LaunchingImage.png */,
 				99BE41E71FC1E0F800D21A5F /* AbstractBackground.png */,
 			);
 			path = "Remind Me There";
@@ -300,6 +303,7 @@
 				99BE41E81FC1E0F800D21A5F /* AbstractBackground.png in Resources */,
 				9906ED701FC0A11700821624 /* Assets.xcassets in Resources */,
 				9906ED6E1FC0A11700821624 /* Main.storyboard in Resources */,
+				998666901FDA94AC00E3D8B3 /* LaunchingImage.png in Resources */,
 				9926FAD61FDA5F1700AEA422 /* Text Icon1.png in Resources */,
 				99C4D3FD1FD992A800AB0C0B /* LaunchcImage.png in Resources */,
 			);
