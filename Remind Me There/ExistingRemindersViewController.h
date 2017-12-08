@@ -16,6 +16,7 @@
 
 
 @property NSMutableArray *existingReminderLabels;
+@property NSMutableArray *existingReminderPhotos;
 
 @end
 

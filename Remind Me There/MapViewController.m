@@ -84,8 +84,8 @@
     
     // Storing longitude and latitude information of the chosen placemark in the user defaults:
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setDouble:placemark.location.coordinate.longitude forKey:@"QLongitude"];
-    [defaults setDouble:placemark.location.coordinate.latitude forKey:@"QLatitude"];
+    [defaults setDouble:placemark.location.coordinate.longitude forKey:@"kLongitude"];
+    [defaults setDouble:placemark.location.coordinate.latitude forKey:@"kLatitude"];
     
     // Setting properties of the annotation (ie the red pin)
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];

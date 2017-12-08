@@ -50,18 +50,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    // Number of rows = number of search matches
-    return self.matchingSearchResults.count;
-}
-
 
 //Method for putting together the address line shown with each search result:
 -(NSString *)addressLine:(MKPlacemark *)selectedResult {
@@ -98,6 +86,19 @@
 
 
 
+#pragma mark - Table view data source methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // Number of rows = number of search matches
+    return self.matchingSearchResults.count;
+}
+
+
 
   // Filling up the table's cells from the search results
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,6 +119,10 @@
     return cell;
 }
 
+
+
+
+#pragma mark - Table view delegate method
 
 // Identifying which cell of the results has been selected by the user and using it to place a pin on the map on its location:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

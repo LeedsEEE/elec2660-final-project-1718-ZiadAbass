@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
-#import "Reminder.h"
 #import <UserNotifications/UserNotifications.h>
 #import "ViewReminderViewController.h"
 

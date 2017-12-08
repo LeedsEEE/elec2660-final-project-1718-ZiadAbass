@@ -118,7 +118,7 @@
 }
 
 
- //Saving the selected image:
+  //Saving the selected image:
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
     self.chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -212,7 +212,7 @@
     NSLog(@"Saving Reminder...");
     
     // Allocaing memory and initialising:
-    Reminder *newReminder = [[Reminder alloc] init];
+    //Reminder *newReminder = [[Reminder alloc] init];
     
     
     
@@ -220,7 +220,7 @@
     
 
     // Setting the properties of the reminder:
-    newReminder.reminderLabel = self.reminderLabelText.text;
+    //newReminder.reminderLabel = self.reminderLabelText.text;
 
     
     
@@ -229,7 +229,7 @@
     [self.reminderTextArray addObject:self.reminderText.text];
     
     
-    
+    //If the reminder is only text (no image chosen)
     if (self.chosenImage == nil) {
         
         [self.reminderPhotoDataArray addObject:@"No Photo"];
@@ -243,7 +243,7 @@
     }
     
     
-    
+    //If a photo is chosen (no text(
     if (self.reminderText == nil) {
         
         [self.reminderTextArray addObject:@"No Text"];
@@ -258,26 +258,30 @@
     
     
     // Printing the coordinates of the chosen location:
-    NSLog(@"LONGITUDE OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLongitude"] );
-    NSLog(@"LATITUDE OF CHOSEN PLACE = %f", [defaults doubleForKey:@"QLatitude"] );
+    NSLog(@"LONGITUDE OF CHOSEN PLACE = %f", [defaults doubleForKey:@"kLongitude"] );
+    NSLog(@"LATITUDE OF CHOSEN PLACE = %f", [defaults doubleForKey:@"kLatitude"] );
     
     
     // Defining the centre point of the reminder's region:
     CLLocationCoordinate2D centre;
-    centre.latitude = [defaults doubleForKey:@"QLatitude"];
-    centre.longitude = [defaults doubleForKey:@"QLongitude"];
+    centre.latitude = [defaults doubleForKey:@"kLatitude"];
+    centre.longitude = [defaults doubleForKey:@"kLongitude"];
     
     
     
-    self.tempRegion = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"%@",newReminder.reminderLabel]];
+    //self.tempRegion = [[CLCircularRegion alloc] initWithCenter:centre radius:70 identifier:[NSString stringWithFormat:@"%@",newReminder.reminderLabel]];
+    
+    
+    self.tempRegion = [[CLCircularRegion alloc] initWithCenter:centre radius:70 identifier:[NSString stringWithFormat:@"%@",self.reminderLabelText.text]];
+    
     
     
     [self.locationManager startMonitoringForRegion:self.tempRegion];
-    
     self.tempRegion.notifyOnEntry = YES;
     self.tempRegion.notifyOnExit = NO;
 
     
+    //Saving the arrays to NSUserDefaults:
     [defaults setObject:self.reminderLabelArray forKey:@"kReminderLabelArray"];
     [defaults setObject:self.reminderPhotoDataArray forKey:@"kReminderPhotoArray"];
     [defaults setObject:self.reminderTextArray forKey:@"kReminderTextArray"];
@@ -304,10 +308,12 @@
     self.chosenImage = nil;
 
     
-    NSLog(@"Number of elements in reminder label array: %li",self.reminderLabelArray.count);
-    NSLog(@"Number of elements in reminder photo array: %li",self.reminderPhotoDataArray.count);
+    //NSLog(@"Number of elements in reminder label array: %li",self.reminderLabelArray.count);
+    //NSLog(@"Number of elements in reminder photo array: %li",self.reminderPhotoDataArray.count);
     
 }
+
+
 
 
 
@@ -317,7 +323,7 @@
          didEnterRegion:(CLRegion *)region{
     
     
-        NSLog(@"Entered %@", region.identifier);
+    NSLog(@"Entered %@", region.identifier);
 
     
     NSString *tempIdentifier = region.identifier;
@@ -327,7 +333,7 @@
         return (*stop = ([obj isEqualToString:tempIdentifier]));
     }];
     
-    NSLog(@"Index number of reminder is %lu",(unsigned long)objectIndex);
+    //NSLog(@"Index number of reminder is %lu",(unsigned long)objectIndex);
     
     
     

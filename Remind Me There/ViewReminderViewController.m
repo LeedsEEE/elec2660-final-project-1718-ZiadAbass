@@ -22,10 +22,9 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
     
     
-    self.enteredReminderLabel.text = nil;
-    self.reminderTextLabel.text = nil;
     
-    //Displaying the image in the correct orientation:
+    //Clearing the view controller before displaying the most recent reminder info:
+    self.enteredReminderLabel.text = nil;
     self.landscapeEnteredImage.image = nil;
     self.portraitEnteredImage.image = nil;
     self.squareEnteredImage.image = nil;
@@ -55,8 +54,6 @@
     
     
     self.enteredReminderLabel.text = nil;
-    //self.reminderTextLabel = nil;
-    //self.reminderTextLabel.hidden = YES;
     self.reminderTextLabel.text = nil;
 
     
@@ -157,7 +154,7 @@
     
     NSLog(@"Current Reminder Text: %@",currentReminderText);
     
-    if ([currentReminderText  isEqual: @"No Text"]) {
+    if ([currentReminderText isEqualToString:@"No Text"]) {
         
         self.reminderTextLabel.hidden = YES;
         

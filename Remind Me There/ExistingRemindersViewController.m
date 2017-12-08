@@ -30,6 +30,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.existingReminderLabels = [defaults objectForKey:@"kReminderLabelArray"];
+    self.existingReminderPhotos = [defaults objectForKey:@"kReminderPhotoArray"];
     
     [self.existingRemindersTable reloadData];
 
@@ -64,8 +65,30 @@
     
     if(indexPath.section == 0){
         
+        cell.textLabel.text = nil;
         
-        cell.textLabel.text = [self.existingReminderLabels objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [self.existingReminderLabels objectAtIndex:indexPath.row];
+        
+        
+        NSData *tempPhotoData = [self.existingReminderPhotos objectAtIndex:indexPath.row];
+        
+        if ([tempPhotoData isEqual:@"No Photo"]) {
+            
+            cell.imageView.image = [UIImage imageNamed:@"Text Icon1"];
+            
+        } else {
+            
+            cell.imageView.image = [UIImage imageWithData:tempPhotoData];
+            
+        }
+            
+            
+        
+        
+        
+        
+        
+        cell.backgroundColor = [UIColor lightGrayColor];
         
         
     }
