@@ -120,7 +120,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Xf-Zc-FCy">
                                 <rect key="frame" x="40" y="210" width="295" height="29"/>
                                 <segments>
-                                    <segment title="Just the label"/>
+                                    <segment title="Just text"/>
                                     <segment title="Add a photo"/>
                                 </segments>
                                 <color key="tintColor" red="0.45466296955295071" green="0.45957295306839374" blue="0.45179513951393152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -387,7 +387,7 @@
                                     <constraint firstAttribute="height" constant="429" id="dYU-k8-NZC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-VX-8K0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-VX-8K0">
                                 <rect key="frame" x="16" y="39" width="281" height="52"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                 <color key="textColor" white="0.34648980034722221" alpha="1" colorSpace="calibratedWhite"/>
@@ -423,6 +423,12 @@
                                 <color key="textColor" red="0.35572652284263961" green="0.35572652284263961" blue="0.35572652284263961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4J1-am-rL3">
+                                <rect key="frame" x="16" y="191" width="349" height="32.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <color key="textColor" red="0.29772763324873097" green="0.29772763324873097" blue="0.29772763324873097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -431,9 +437,12 @@
                             <constraint firstItem="eFC-VX-8K0" firstAttribute="top" secondItem="664-rJ-9ki" secondAttribute="top" constant="19" id="8r0-sl-T7j"/>
                             <constraint firstItem="664-rJ-9ki" firstAttribute="bottom" secondItem="yvY-F2-lt9" secondAttribute="bottom" constant="16" id="BxC-81-NVo"/>
                             <constraint firstItem="OKv-0z-yVE" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="CVd-kN-1bC"/>
+                            <constraint firstItem="4J1-am-rL3" firstAttribute="top" secondItem="eFC-VX-8K0" secondAttribute="bottom" constant="100" id="Igk-Bl-ZC5"/>
                             <constraint firstItem="t11-3V-djT" firstAttribute="top" secondItem="63t-yC-FaZ" secondAttribute="bottom" constant="150" id="Mre-rp-CKo"/>
                             <constraint firstItem="t11-3V-djT" firstAttribute="centerX" secondItem="664-rJ-9ki" secondAttribute="centerX" id="OEV-dJ-fzU"/>
                             <constraint firstItem="63t-yC-FaZ" firstAttribute="centerX" secondItem="664-rJ-9ki" secondAttribute="centerX" id="PZp-WB-Tze"/>
+                            <constraint firstItem="4J1-am-rL3" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="QYu-Mq-tBz"/>
+                            <constraint firstItem="664-rJ-9ki" firstAttribute="trailing" secondItem="4J1-am-rL3" secondAttribute="trailing" constant="10" id="Umr-Nl-pQU"/>
                             <constraint firstItem="rah-V3-39I" firstAttribute="leading" secondItem="664-rJ-9ki" secondAttribute="leading" constant="16" id="WNc-AW-BRO"/>
                             <constraint firstItem="664-rJ-9ki" firstAttribute="bottom" secondItem="OKv-0z-yVE" secondAttribute="bottom" constant="16" id="jek-eV-icC"/>
                             <constraint firstItem="664-rJ-9ki" firstAttribute="bottom" secondItem="rah-V3-39I" secondAttribute="bottom" constant="16" id="n0Q-VR-VLZ"/>
@@ -449,6 +458,7 @@
                         <outlet property="informationLabel" destination="63t-yC-FaZ" id="Z3w-8P-t1D"/>
                         <outlet property="landscapeEnteredImage" destination="OKv-0z-yVE" id="Dka-dG-PEJ"/>
                         <outlet property="portraitEnteredImage" destination="yvY-F2-lt9" id="G3S-oX-g5B"/>
+                        <outlet property="reminderTextLabel" destination="4J1-am-rL3" id="tmi-fT-qdG"/>
                         <outlet property="squareEnteredImage" destination="rah-V3-39I" id="Ssl-GP-1Co"/>
                         <outlet property="viewReminderButtonObject" destination="t11-3V-djT" id="2oY-AW-KhY"/>
                     </connections>

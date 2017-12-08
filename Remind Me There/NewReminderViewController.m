@@ -36,48 +36,13 @@
     self.landscapePreviewImage.image = nil;
     self.chosenImage = nil;
     
-    /*
-    
-    // Reseting the buttons:
-    self.saveReminderButtonOutlet.hidden = YES;
-    self.chosenLocationLabel.hidden = YES;
-    self.cancelButtonOutlet.hidden = YES;
-    self.reviewButtonOutlet.hidden = NO;
-    
-    // Clear the fields for next reminder:
-    self.reminderText.text = nil;
-    self.reminderLabelText.text = nil;
-    self.squarePreviewImage.image = nil;
-    self.portraitPreviewImage.image = nil;
-    self.landscapePreviewImage.image = nil;
-    
-    */
-    
-    /*
-    ////self.reminderArray = [NSMutableArray array];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    ////self.reminderArray = [defaults objectForKey:@"kReminderArray"];
-    
-    
-    self.reminderLabelArray = [NSMutableArray array];
-    //self.reminderLabelArray = [defaults objectForKey:@"kReminderLabelArray"];
-    
-    self.reminderTextArray = [NSMutableArray array];
-    //self.reminderTextArray = [defaults objectForKey:@"kReminderTextArray"];
-    
-    self.reminderPhotoDataArray = [NSMutableArray array];
-    //self.reminderPhotoDataArray = [defaults objectForKey:@"kReminderPhotoArray"];
-    
-    */
-    
+   
     
     //Initialising the arrays:
     self.reminderLabelArray = [NSMutableArray array];
     self.reminderTextArray = [NSMutableArray array];
     self.reminderPhotoDataArray = [NSMutableArray array];
     
-    ///[self.reminderLabelArray addObject:@"First Object"];
-    ///[self.reminderPhotoDataArray addObject:@"First Object"];
      
     //Setting backgound image:
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AbstractBackground"]]];
@@ -93,8 +58,6 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
-    //NSLog(@"%@",[self.reminderArray objectAtIndex:0]);
-    //NSLog(@"FROM DEFAULTS%@",[defaults objectForKey:@"kReminderArray"]);
     
     self.notificationAccessGranted = NO;
     
@@ -228,6 +191,9 @@
 
 
 
+
+
+
 // Start over if cancel button is pressed
 - (IBAction)cancelButton:(UIButton *)sender {
     
@@ -252,24 +218,16 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    ////CLLocationDegrees longitude = [defaults doubleForKey:@"QLongitude"];
-    ////CLLocationDegrees latitude = [defaults doubleForKey:@"QLatitude"];
-    
 
     // Setting the properties of the reminder:
-    
     newReminder.reminderLabel = self.reminderLabelText.text;
 
     
     
     [self.reminderLabelArray addObject:self.reminderLabelText.text];
     
-    
     [self.reminderTextArray addObject:self.reminderText.text];
     
-    // Pulling PNG data from the chosen image:
-    //NSData *imagePngData = UIImagePNGRepresentation(self.chosenImage);
-    //[self.reminderPhotoDataArray addObject:imagePngData];
     
     
     if (self.chosenImage == nil) {
@@ -281,6 +239,18 @@
         // Pulling PNG data from the chosen image:
         NSData *imagePngData = UIImagePNGRepresentation(self.chosenImage);
         [self.reminderPhotoDataArray addObject:imagePngData];
+        
+    }
+    
+    
+    
+    if (self.reminderText == nil) {
+        
+        [self.reminderTextArray addObject:@"No Text"];
+        
+    } else {
+        
+        [self.reminderTextArray addObject:self.reminderText.text];
         
     }
     
@@ -298,14 +268,6 @@
     centre.longitude = [defaults doubleForKey:@"QLongitude"];
     
     
-    // Defining the reminder's region based on the user's choice:
-    
-    //CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"Reminder %lu", (unsigned long)_reminderArray.count]];
-    
-    //Random identifier:
-    //newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[[NSUUID UUID] UUIDString]];
-    
-    ////newReminder.region = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"%@",newReminder.reminderLabel]];
     
     self.tempRegion = [[CLCircularRegion alloc] initWithCenter:centre radius:100 identifier:[NSString stringWithFormat:@"%@",newReminder.reminderLabel]];
     
@@ -314,19 +276,6 @@
     
     self.tempRegion.notifyOnEntry = YES;
     self.tempRegion.notifyOnExit = NO;
-    
-    
-    
-    
-    // Saving the data into the array:
-    //[self.reminderArray addObject:newReminder];
-    
-    //////self.reminderArray = [NSMutableArray array];
-    //////[self.reminderArray insertObject:newReminder atIndex:0];
-    
-    
-    // Saving the array to the user defaults:
-    /////[defaults setObject:self.reminderArray forKey:@"kReminderArray"];
 
     
     [defaults setObject:self.reminderLabelArray forKey:@"kReminderLabelArray"];
@@ -338,9 +287,7 @@
     NSLog(@"Number of reminders is %lu",(unsigned long)self.numberOfReminders);
     NSLog(@"Array contents: %@",self.reminderLabelArray);
      
-     
-    //Refresh ViewController
-    //[self viewDidLoad];
+
     
     // Reseting the buttons:
     self.saveReminderButtonOutlet.hidden = YES;
@@ -370,10 +317,6 @@
          didEnterRegion:(CLRegion *)region{
     
     
-       //if([[region identifier] isEqualToString:@"ReminderOne"]){
-           
-        //NSLog(@"Entered region");
-    
         NSLog(@"Entered %@", region.identifier);
 
     
@@ -390,7 +333,7 @@
     
     NSArray *tempArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderPhotoArray"];
     NSData *imageData = [tempArray objectAtIndex:objectIndex];
-    //[[NSUserDefaults standardUserDefaults] setObject:imageData forKey:@"currentImageData"];
+
     [[NSUserDefaults standardUserDefaults] setInteger:objectIndex forKey:@"currentIndex"];
     
     if([imageData  isEqual: @"No Photo"]) {
@@ -402,12 +345,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:@"currentImageData"];
         
     }
-    
-    
-    /*
-    UIImage *currentImage = [UIImage imageWithData:imageData];
-    self.currentReminderImage.image = currentImage;
-    */
     
     
     
@@ -434,17 +371,6 @@
         
     }
     
-    /*
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [self.reminderLabelArray removeObjectAtIndex:objectIndex];
-    [self.reminderPhotoDataArray removeObjectAtIndex:objectIndex];
-    
-    [defaults setObject:self.reminderLabelArray forKey:@"kReminderLabelArray"];
-    [defaults setObject:self.reminderPhotoDataArray forKey:@"kReminderPhotoArray"];
-    
-    */
-    
     
     [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"1";
     
@@ -456,18 +382,6 @@
 }
 
 
-
-/*
-
-- (void)locationManager:(CLLocationManager *)manager
-          didExitRegion:(CLRegion *)region{
-
-            NSLog(@"Exited region");
-    
-    
-}
- 
- */
 
 
 - (void)locationManager:(CLLocationManager *)manager

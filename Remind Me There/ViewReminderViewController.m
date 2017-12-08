@@ -23,16 +23,14 @@
     
     
     self.enteredReminderLabel.text = nil;
-    //self.enteredReminderLabel.numberOfLines = 3;
-    
+    self.reminderTextLabel.text = nil;
     
     //Displaying the image in the correct orientation:
     self.landscapeEnteredImage.image = nil;
     self.portraitEnteredImage.image = nil;
     self.squareEnteredImage.image = nil;
+
     
-    
-    ///self.tempReminderObject = [[NewReminderViewController alloc] init];
     
     
     self.informationLabel.text = [NSString stringWithFormat:@"Your reminder details %@ will be available when you %@  arrive at a saved location...",@"\n",@"\n"];
@@ -57,30 +55,26 @@
     
     
     self.enteredReminderLabel.text = nil;
-    //self.enteredReminderLabel.numberOfLines = 3;
+    //self.reminderTextLabel = nil;
+    //self.reminderTextLabel.hidden = YES;
+    self.reminderTextLabel.text = nil;
+
     
-    
-    //Removing the badge once this ViewController is opened:
-    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
+    // Only display the option of viewing reminder info if the user is in a saved region:
+    if ([[[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue  isEqual: @"1"]) {
+        
+        self.viewReminderButtonObject.hidden = NO;
+        self.informationLabel.hidden = YES;
+        
+    } else {
+        
+        self.viewReminderButtonObject.hidden = YES;
+        self.informationLabel.hidden = NO;
+        
+    }
     
     
     [self viewDidLoad];
-
-    
-    /*
-    
-    NSData *tempPhotoData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentImageData"];
-    self.landscapeEnteredImage.image = [UIImage imageWithData:tempPhotoData];
-    
-    
-    NSArray *labelsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderLabelArray"];
-    
-    NSInteger currentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentIndex"];
-    
-    self.enteredReminderLabel.text = [labelsArray objectAtIndex:currentIndex];
-    
-    
-    */
      
      
 }
@@ -92,8 +86,14 @@
 - (IBAction)viewReminderButton:(UIButton *)sender {
     
     
+    //Removing the badge once the reminder details are opened:
+    [[super.tabBarController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
+    
+    
     self.viewReminderButtonObject.hidden = YES;
     self.informationLabel.hidden = YES;
+    
+    self.reminderTextLabel.hidden = NO;
     
     NSData *tempPhotoData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentImageData"];
     
@@ -118,6 +118,8 @@
             self.landscapeEnteredImage.hidden = YES;
             self.squareEnteredImage.hidden = YES;
             
+            self.reminderTextLabel.hidden = YES;
+            
         } else if (currentImage.size.height < currentImage.size.width) {    //if landscape
             
             self.landscapeEnteredImage.hidden = NO;
@@ -125,12 +127,16 @@
             self.portraitEnteredImage.hidden = YES;
             self.squareEnteredImage.hidden = YES;
             
+            self.reminderTextLabel.hidden = YES;
+            
         } else {                                                            //if squared
             
             self.squareEnteredImage.hidden = NO;
             [self.squareEnteredImage setImage:currentImage];
             self.portraitEnteredImage.hidden = YES;
             self.landscapeEnteredImage.hidden = YES;
+            
+            self.reminderTextLabel.hidden = YES;
             
         }
     
@@ -141,11 +147,25 @@
     
     
     NSArray *labelsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderLabelArray"];
+    NSArray *textArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderTextArray"];
     
     NSInteger currentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentIndex"];
     
     self.enteredReminderLabel.text = [labelsArray objectAtIndex:currentIndex];
     
+    NSString *currentReminderText = [textArray objectAtIndex:currentIndex];
+    
+    NSLog(@"Current Reminder Text: %@",currentReminderText);
+    
+    if ([currentReminderText  isEqual: @"No Text"]) {
+        
+        self.reminderTextLabel.hidden = YES;
+        
+    } else {
+        
+        self.reminderTextLabel.text = currentReminderText;
+        
+    }
     
 }
 

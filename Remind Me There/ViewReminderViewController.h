@@ -25,6 +25,7 @@
 
 
 @property NSArray *reminderLabelsArray;
+@property NSArray *reminderTextArray;
 
 
 - (IBAction)viewReminderButton:(UIButton *)sender;
@@ -33,6 +34,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *informationLabel;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *reminderTextLabel;
 
 
 @end
