@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Existing Reminders-->
+        <!--Existing Reminders View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="ExistingRemindersViewController" sceneMemberID="viewController">
@@ -68,7 +68,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Existing Reminders" image="Existing3" selectedImage="Existing3" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="Existing8" selectedImage="Existing8" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="existingRemindersTable" destination="SaU-FZ-0RE" id="vgI-10-Jp4"/>
                     </connections>
@@ -77,12 +79,12 @@
             </objects>
             <point key="canvasLocation" x="-807.20000000000005" y="801.94902548725645"/>
         </scene>
-        <!--New Reminder-->
+        <!--Navigation Controller-->
         <scene sceneID="WxW-EH-nLn">
             <objects>
                 <navigationController id="Ga1-SO-JeM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Reminder" image="NewReminder2" selectedImage="NewReminder2" id="cuE-2M-pC8">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
+                    <tabBarItem key="tabBarItem" title="" image="NewReminder1" selectedImage="NewReminder1" id="cuE-2M-pC8">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-3"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.17851360103626945" green="0.17851360103626945" blue="0.17851360103626945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -370,7 +372,7 @@
             </objects>
             <point key="canvasLocation" x="-10" y="3044"/>
         </scene>
-        <!--View Reminder-->
+        <!--View Reminder View Controller-->
         <scene sceneID="JlR-Zu-Grr">
             <objects>
                 <viewController id="gOw-On-czN" customClass="ViewReminderViewController" sceneMemberID="viewController">
@@ -439,7 +441,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="664-rJ-9ki"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="View Reminder" image="ViewReminder3" selectedImage="ViewReminder3" id="MXQ-Zk-hK8"/>
+                    <tabBarItem key="tabBarItem" title="" image="ViewReminder1" selectedImage="ViewReminder1" id="MXQ-Zk-hK8">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-3"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="enteredReminderLabel" destination="eFC-VX-8K0" id="H8r-BS-VgO"/>
                         <outlet property="informationLabel" destination="63t-yC-FaZ" id="Z3w-8P-t1D"/>
@@ -480,9 +484,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Existing3" width="37" height="37"/>
-        <image name="NewReminder2" width="35" height="35"/>
-        <image name="ViewReminder3" width="35" height="35"/>
+        <image name="Existing8" width="50" height="50"/>
+        <image name="NewReminder1" width="50" height="50"/>
+        <image name="ViewReminder1" width="50" height="50"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

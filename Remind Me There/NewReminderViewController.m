@@ -34,6 +34,7 @@
     self.squarePreviewImage.image = nil;
     self.portraitPreviewImage.image = nil;
     self.landscapePreviewImage.image = nil;
+    self.chosenImage = nil;
     
     /*
     
@@ -247,8 +248,7 @@
     // Allocaing memory and initialising:
     Reminder *newReminder = [[Reminder alloc] init];
     
-    // Pulling PNG data from the chosen image:
-    NSData *imagePngData = UIImagePNGRepresentation(self.chosenImage);
+    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -259,26 +259,32 @@
     // Setting the properties of the reminder:
     
     newReminder.reminderLabel = self.reminderLabelText.text;
-    /*
-    newReminder.reminderText = self.reminderText.text;
-    newReminder.reminderPhotoData = imagePngData;
-    ////newReminder.reminderLongitude = &(longitude);
-    ////newReminder.reminderLatitude = &(latitude);
-    newReminder.reminderPlacemarkName = [defaults objectForKey:@"kPlacemarkName"];
-    */
+
     
     
-    //self.reminderLabelArray = [NSMutableArray array];
-    //self.reminderLabelArray = [defaults objectForKey:@"kReminderLabelArray"];
     [self.reminderLabelArray addObject:self.reminderLabelText.text];
     
-    //self.reminderTextArray = [NSMutableArray array];
-    //self.reminderTextArray = [defaults objectForKey:@"kReminderTextArray"];
+    
     [self.reminderTextArray addObject:self.reminderText.text];
     
-    //self.reminderPhotoDataArray = [NSMutableArray array];
-    //self.reminderPhotoDataArray = [defaults objectForKey:@"kReminderPhotoArray"];
-    [self.reminderPhotoDataArray addObject:imagePngData];
+    // Pulling PNG data from the chosen image:
+    //NSData *imagePngData = UIImagePNGRepresentation(self.chosenImage);
+    //[self.reminderPhotoDataArray addObject:imagePngData];
+    
+    
+    if (self.chosenImage == nil) {
+        
+        [self.reminderPhotoDataArray addObject:@"No Photo"];
+    
+    } else {
+        
+        // Pulling PNG data from the chosen image:
+        NSData *imagePngData = UIImagePNGRepresentation(self.chosenImage);
+        [self.reminderPhotoDataArray addObject:imagePngData];
+        
+    }
+    
+    
     
     
     // Printing the coordinates of the chosen location:
@@ -348,8 +354,11 @@
     self.squarePreviewImage.image = nil;
     self.portraitPreviewImage.image = nil;
     self.landscapePreviewImage.image = nil;
+    self.chosenImage = nil;
 
-     
+    
+    NSLog(@"Number of elements in reminder label array: %li",self.reminderLabelArray.count);
+    NSLog(@"Number of elements in reminder photo array: %li",self.reminderPhotoDataArray.count);
     
 }
 
@@ -381,8 +390,19 @@
     
     NSArray *tempArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kReminderPhotoArray"];
     NSData *imageData = [tempArray objectAtIndex:objectIndex];
-    [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:@"currentImageData"];
+    //[[NSUserDefaults standardUserDefaults] setObject:imageData forKey:@"currentImageData"];
     [[NSUserDefaults standardUserDefaults] setInteger:objectIndex forKey:@"currentIndex"];
+    
+    if([imageData  isEqual: @"No Photo"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"No Photo" forKey:@"currentImageData"];
+        
+    } else {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:@"currentImageData"];
+        
+    }
+    
     
     /*
     UIImage *currentImage = [UIImage imageWithData:imageData];

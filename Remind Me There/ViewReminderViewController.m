@@ -97,38 +97,46 @@
     
     NSData *tempPhotoData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentImageData"];
     
-    UIImage *currentImage = [UIImage imageWithData:tempPhotoData];
     
-    
-    
-    
-    //Show the image in a suitable orientation:
-    if (currentImage.size.height > currentImage.size.width) {       // if portrait
+    if ([tempPhotoData isEqual:@"No Photo"]) {
         
-        self.portraitEnteredImage.hidden = NO;
-        [self.portraitEnteredImage setImage:currentImage];
+        self.portraitEnteredImage.hidden = YES;
         self.landscapeEnteredImage.hidden = YES;
         self.squareEnteredImage.hidden = YES;
         
-    } else if (currentImage.size.height < currentImage.size.width) {    //if landscape
+    } else {
         
-        self.landscapeEnteredImage.hidden = NO;
-        [self.landscapeEnteredImage setImage:currentImage];
-        self.portraitEnteredImage.hidden = YES;
-        self.squareEnteredImage.hidden = YES;
         
-    } else {                                                              //if squared
+        UIImage *currentImage = [UIImage imageWithData:tempPhotoData];
         
-        self.squareEnteredImage.hidden = NO;
-        [self.squareEnteredImage setImage:currentImage];
-        self.portraitEnteredImage.hidden = YES;
-        self.landscapeEnteredImage.hidden = YES;
         
-    }
+        //Show the image in a suitable orientation:
+        if (currentImage.size.height > currentImage.size.width) {       // if portrait
+            
+            self.portraitEnteredImage.hidden = NO;
+            [self.portraitEnteredImage setImage:currentImage];
+            self.landscapeEnteredImage.hidden = YES;
+            self.squareEnteredImage.hidden = YES;
+            
+        } else if (currentImage.size.height < currentImage.size.width) {    //if landscape
+            
+            self.landscapeEnteredImage.hidden = NO;
+            [self.landscapeEnteredImage setImage:currentImage];
+            self.portraitEnteredImage.hidden = YES;
+            self.squareEnteredImage.hidden = YES;
+            
+        } else {                                                            //if squared
+            
+            self.squareEnteredImage.hidden = NO;
+            [self.squareEnteredImage setImage:currentImage];
+            self.portraitEnteredImage.hidden = YES;
+            self.landscapeEnteredImage.hidden = YES;
+            
+        }
+    
 
     
-    
-    
+    }
     
     
     
